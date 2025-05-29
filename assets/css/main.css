@@ -32,7 +32,7 @@
     position: absolute; /* 绝对定位 */
     width: 100%; /* 宽度占满父容器的宽度 */
     height: 10%; /* 高度占整个盒子的10% */
-    background-color: rgb(17, 87, 238); /* 背景颜色 */
+    background-color: rgb(255, 255, 255); /* 背景颜色 */
     margin: 0; /* 移除默认的外边距 */
     padding: 0; /* 可选：设置内边距 */
 }
@@ -106,7 +106,7 @@
     top: 10%; /* 距离顶部的偏移量为10% */
     width: 100%; /* 宽度占满父容器的宽度 */
     height: 85%; /* 高度占整个盒子的80% */
-    background-color: rgba(46, 58, 228, 0.808); /* 背景颜色 */
+    background-color: rgba(255, 255, 255, 0.808); /* 背景颜色 */
     margin: 0; /* 移除默认的外边距 */
     padding: 0; /* 可选：设置内边距 */
 }
