@@ -40,19 +40,133 @@
 
         <!-- 2.中间大盒子 -->
         <div class="box_center">
-            <!-- 2.1居中的大盒子 -->
+
+            <!-- 2.1居中的大盒子 -- 图片轮播部分 -->
             <div class="center_middle">
-                <!-- 轮播图片组件大盒子 -->
+                <!-- 2.1.1轮播图片组件大盒子 -->
                 <div class="middle_img_show_box">
                     <!-- 图片框 -->
-                    <div class="image_container">
+                    <div class="image_container" id="home_show_imgs">
                         <img src="./assets/images/home_img/home_show_1.jpg" alt="1">
+                        <img src="./assets/images/home_img/home_show_2.jpg" alt="2">
+                        <img src="./assets/images/home_img/home_show_3.jpg" alt="3">
+                        <img src="./assets/images/home_img/home_show_4.jpg" alt="4">
+                        <img src="./assets/images/home_img/home_show_5.jpg" alt="5">
                     </div>
                     <!-- 按钮框 -->
-                    <button class="left_button"></button>
-                    <button class="right_button"></button>
+                    <button class="left_button" id="left_button"></button>
+                    <button class="right_button" id="right_button"></button>
                 </div>
-                
+                <!-- 2.1.2轮播图片组件大盒子 下面的那个导览小盒子 -->
+                <div class="img_nav_box">
+                    <div class="nav_box">
+                        <img src="./assets/images/home_img/home_show_1.jpg" alt="nav_1">
+                    </div>
+                    <div class="nav_box">
+                        <img src="./assets/images/home_img/home_show_2.jpg" alt="nav_2">
+                    </div>
+                    <div class="nav_box">
+                        <img src="./assets/images/home_img/home_show_3.jpg" alt="nav_3">
+                    </div>
+                    <div class="nav_box">
+                        <img src="./assets/images/home_img/home_show_4.jpg" alt="nav_4">
+                    </div>
+                    <div class="nav_box">
+                        <img src="./assets/images/home_img/home_show_5.jpg" alt="nav_5">
+                    </div>
+                </div>
+                <!--2.1.3导览框下面的对展示图片的摘要-->
+                <div class="img_nav_abstract">
+                    <!--摘要文本，会随着轮播变化-->
+                    <p id="img_abstract_text">Abstract for image 1: This image showcases our research in autonomous driving systems,This image showcases our research in autonomous driving systems,This image showcases our research in autonomous driving systems.</p>
+                </div>
+                <!--2.1.4 关于更多链接展示：bilibili、yutube、github等-->
+                <div class="learn_more_box">
+                    <div class="github_box">
+                        <a href="https://github.com/AutomotiveIntelligenceLab">
+                            <img src="./assets/images/home_img/GitHub_logo.png" alt="Github">
+                        </a>
+                    </div>
+                    <div class="youtube_box">
+                        <a href="https://www.youtube.com/">
+                            <img src="./assets/images/home_img/youtube_logo.png">
+                        </a>
+                    </div>
+                    <div class="bilibili_box">
+                        <a href="https://www.bilibili.com/">
+                            <img src="./assets/images/home_img/bilibili_logo.png">
+                        </a>
+                    </div>
+                </div>
+                <!--第一部分2.1结束的分割线-->    
+                <hr class="divider"> 
+
+                <!-- 2.2 居中大盒子 -- News盒子部分 -->
+                <!-- 2.2.1 News标题 -->
+                <div class="News_titile">
+                    <p class="News_titile_css">✨Recent Highlights✨</p>
+                </div>
+                <!-- 2.2.2 新闻盒子 -->
+                <div class="News_box">
+                    <!--三个新闻盒子-->
+                    <div class="news_item">
+                        <!--新闻盒子左边的图片-->
+                        <div class="news_image">
+                            <img src="./assets/images/home_img/news_1.jpeg" alt="News Image 1">
+                        </div>
+                        <!--新闻盒子右边的文本框-->
+                        <div class="news_text">
+                            <p class="news_text_time">
+                                May 21, 2025
+                            </p>
+                            <p class="news_text_title">
+                                We Published Our Latest Research Paper at CVPR 2025, Chongqing<br>
+                                我们在CVPR2025上发表了最新的研究论文
+                            </p>
+                            <p class="news_text_content">
+                                Replace brackets with your specifics. Example: "We present a novel diffusion model for 3D reconstruction, achieving SOTA on ScanNet. Our hybrid architecture combines implicit fields with transformers, validated through experiments. Code: github.com/xxx"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="news_item">
+                        <div class="news_image">
+                            <img src="./assets/images/home_img/news_2.jpg" alt="News Image 1">
+                        </div>
+                        <!--新闻盒子右边的文本框-->
+                        <div class="news_text">
+                            <p class="news_text_time">
+                                March 18, 2025
+                            </p>
+                            <p class="news_text_title">
+                                Our Regular Lab Team-Building Activity: Poetry Reading on the Lawn, Shapingba Grand Lawn<br>
+                                课题组团建活动：草坪朗读诗会
+                            </p>
+                            <p class="news_text_content">
+                                Our weekly lab team-building features outdoor singing sessions on the lawn, fostering camaraderie through music and nature. A refreshing break from research routines!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="news_item">
+                        <div class="news_image">
+                            <img src="./assets/images/home_img/news_3.jpg" alt="News Image 1">
+                        </div>
+                        <!--新闻盒子右边的文本框-->
+                        <div class="news_text">
+                            <p class="news_text_time">
+                                May 9, 2025 - May 10, 2025
+                            </p>
+                            <p class="news_text_title">
+                                The 2025 Chinese Conference on Vehicle Control and Intelligence (CVCI 2025), Shapingba, Chongqing<br>
+                                2025中国车辆控制与智能化大会（CVCI 2025）
+                            </p>
+                            <p class="news_text_content">
+                                CVCI 2025 in Chongqing, China, presents cutting-edge research on intelligent vehicle control, autonomous driving, and AI-powered transportation systems, promoting academic exchanges and industry innovation for future smart mobility.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
@@ -60,13 +174,13 @@
         <!-- 3.底部大盒子 -->
         <div class="box_bottom">
             <div class="bottom_middle">
-                <p class="bottom_text_1">©Automotive Intelligence Lab 2025</p>
+                <p class="bottom_text_1">Teaching Building 7, Zone A, No. 174 Shazheng Street, Shapingba District, Chongqing, China, 400030| Phone: 12345678 | Email: 12345678@123.com<br>Copyright © 2025 Automotive Intelligence Lab</p>
             </div>
 
         </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="./assets/js/home_script.js"></script>
 </body>
 </html>
