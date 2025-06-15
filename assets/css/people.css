@@ -145,16 +145,45 @@
 .teacher_image {
     width: 180px; /* 宽度 */
     height: 180px; /* 高度 */
-    /*border-radius: 50%;  圆形头像 */
     overflow: hidden; /* 防止图片溢出 */
     border: 2px solid #fff; /* 边框 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+    position: relative; /* 相对定位 */
 }
 
 .teacher_image img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* 确保图片填充整个盒子 */
+    transition: opacity 0.3s ease; /* 添加过渡效果 */
+}
+
+.teacher_image:hover img {
+    opacity: 0; /* 鼠标悬停时隐藏原图 */
+}
+
+.teacher_image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0; /* 默认隐藏 */
+    transition: opacity 0.3s ease; /* 添加过渡效果 */
+}
+
+.teacher_image[data-hover-image="li_teacher_2"]::before {
+    background-image: url(../images/people_img/cat.jpg); /* 替换为第二张图片路径 */
+}
+
+.teacher_image[data-hover-image="wang_teacher_2"]::before {
+    background-image: url(../images/people_img/wang_teacher_2.jpg); /* 替换为第二张图片路径 */
+}
+
+.teacher_image:hover::before {
+    opacity: 1; /* 鼠标悬停时显示第二张图片 */
 }
 
 .teacher_name {
@@ -217,12 +246,79 @@
     overflow: hidden; /* 防止图片溢出 */
     border: 2px solid #fff; /* 边框 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+    position: relative; /* 相对定位 */
 }
 
 .student_image img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* 确保图片填充整个盒子 */
+    transition: opacity 0.3s ease; /* 添加过渡效果 */
+}
+
+.student_image:hover img {
+    opacity: 0; /* 鼠标悬停时隐藏原图 */
+}
+
+.student_image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0; /* 默认隐藏 */
+    transition: opacity 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 1 */
+.student_image[data-hover-image="chengyuhan_2"]::before {
+    background-image: url(../images/people_img/chengyuha/chengyuhan_2.png); /* 替换为第二张图片路径 */
+}
+
+/* 2 */
+.student_image[data-hover-image="ouyangdelin_2"]::before {
+    background-image: url(../images/people_img/ouyangdelin/ouyangdelin_2.jpg); /* 替换为第二张图片路径 */
+}
+
+/* 3 */
+.student_image[data-hover-image="cat_2"]::before {
+    background-image: url(../images/people_img/cat.jpg); /* 替换为第二张图片路径 */
+}
+
+/* 4 */
+.student_image[data-hover-image="huangxiangfei_2"]::before {
+    background-image: url(../images/people_img/huangxiangfei/huangxiangfei_2.jpg); /* 替换为第二张图片路径 */
+}
+
+/* 5 */
+.student_image[data-hover-image="caolong_2"]::before {
+    background-image: url(../images/people_img/caolong/caolong_2.png); /* 替换为第二张图片路径 */
+}
+
+/* 6 */
+.student_image[data-hover-image="kangbingxiang_2"]::before {
+    background-image: url(../images/people_img/kangbingxiang/kangbingxiang_2.jpeg); /* 替换为第二张图片路径 */
+}
+
+/* 7 */
+.student_image[data-hover-image="xueqihong_2"]::before {
+    background-image: url(../images/people_img/xueqihong/xueqihong_2.png); /* 替换为第二张图片路径 */
+}
+
+/* 8 */
+.student_image[data-hover-image="jiangtao_2"]::before {
+    background-image: url(../images/people_img/jiangtao/jiangtao_2.png); /* 替换为第二张图片路径 */
+}
+
+/* 9 */
+.student_image[data-hover-image="zhangjunjie_2"]::before {
+    background-image: url(../images/people_img/zhangjunjie/zhangjunjie_2.jpg); /* 替换为第二张图片路径 */
+}
+
+.student_image:hover::before {
+    opacity: 1; /* 鼠标悬停时显示第二张图片 */
 }
 
 .student_name {

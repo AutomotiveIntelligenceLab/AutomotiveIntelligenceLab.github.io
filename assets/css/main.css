@@ -452,3 +452,145 @@
     line-height: 1.5; /*行高*/
     font-weight: bold;
 }
+
+
+/* -----------------------课题组网页聊天机器人设置---------------------- */
+.chatbot-container {
+    position: fixed; /* 固定定位 */
+    bottom: 20px; /* 距离底部20px */
+    right: 20px; /* 距离右侧20px */
+    width: 300px; /* 宽度 */
+    height: 400px; /* 高度 */
+    background-color: #fff; /* 背景颜色 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    z-index: 1000; /* 确保在最上层 */
+}
+
+.chatbot-header {
+    background-color: #007bff; /* 背景颜色 */
+    color: #fff; /* 文字颜色 */
+    padding: 10px; /* 内边距 */
+    border-top-left-radius: 10px; /* 左上角圆角 */
+    border-top-right-radius: 10px; /* 右上角圆角 */
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 左右对齐 */
+    align-items: center; /* 垂直居中 */
+}
+
+.chatbot-header-left {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+}
+
+.chatbot-header-right {
+    display: flex;
+    gap: 10px; /* 按钮之间的间距 */
+}
+
+.chatbot-close-btn {
+    background: none; /* 无背景 */
+    border: none; /* 无边框 */
+    color: #fff; /* 文字颜色 */
+    font-size: 20px; /* 字体大小 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+.chatbot-body {
+    flex: 1; /* 占据剩余空间 */
+    padding: 6px; /* 内边距 */
+    overflow-y: auto; /* 允许垂直滚动 */
+    background-color: #f9f9f9; /* 背景颜色 */
+}
+
+.chatbot-messages {
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    gap: 0px; /* 消息之间的间距 */
+}
+
+.chatbot-message {
+    max-width: 80%; /* 最大宽度 */
+    padding: 0px 0px; /* 内边距 */
+    border-radius: 10px; /* 圆角 */
+    word-wrap: break-word; /* 自动换行 */
+}
+
+.chatbot-message.user {
+    align-self: flex-end; /* 用户消息右对齐 */
+    background-color: #007bff; /* 背景颜色 */
+    color: #fff; /* 文字颜色 */
+    padding: 10px 10px; /* 上下内边距12px，左右内边距16px */
+    border-radius: 10px; /* 圆角 */
+    line-height: 1.2; /* 设置行高，提升可读性 */
+    margin-bottom: 10px; /* 增加消息之间的间距 */
+}
+
+.chatbot-message.bot {
+    align-self: flex-start; /* 机器人消息左对齐 */
+    background-color: #e9ecef; /* 背景颜色 */
+    color: #000; /* 文字颜色 */
+    text-align: justify; /* 文本两端对齐 */
+    word-spacing: normal; /* 恢复默认单词间距 */
+    letter-spacing: normal; /* 恢复默认字符间距 */
+    line-height: 1.2; /* 设置行高，提升可读性 */
+    padding: 10px 10px; /* 增加内边距，使文本与边框有一定距离 */
+    border-radius: 10px; /* 圆角 */
+    font-family: var(--text_navagation); /* 使用Calibri字体 */
+    font-size: 14px; /* 设置字体大小 */
+    white-space: pre-wrap; /* 保留换行符和空格 */
+    margin-bottom: 3px; /* 增加消息之间的间距 */
+}
+
+.chatbot-input {
+    display: flex; /* 使用flex布局 */
+    padding: 10px; /* 内边距 */
+    background-color: #fff; /* 背景颜色 */
+    border-top: 1px solid #ddd; /* 顶部边框 */
+}
+
+.chatbot-input input {
+    flex: 1; /* 占据剩余空间 */
+    padding: 12px 16px; /* 上下内边距12px，左右内边距16px */
+    border: 1px solid #ddd; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+    margin-right: 10px; /* 右边距 */
+    line-height: 1.5; /* 设置行高，提升可读性 */
+    font-size: 14px; /* 设置字体大小 */
+}
+
+.chatbot-input button {
+    padding: 8px 12px; /* 内边距 */
+    background-color: #007bff; /* 背景颜色 */
+    color: #fff; /* 文字颜色 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+.chatbot-toggle-btn {
+    position: fixed; /* 固定定位 */
+    bottom: 20px; /* 距离底部20px */
+    right: 20px; /* 距离右侧20px */
+    width: 50px; /* 宽度 */
+    height: 50px; /* 高度 */
+    background-color: #007bff; /* 背景颜色 */
+    color: #fff; /* 文字颜色 */
+    border: none; /* 无边框 */
+    border-radius: 50%; /* 圆形 */
+    font-size: 24px; /* 字体大小 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    display: none; /* 默认隐藏 */
+    z-index: 1000; /* 确保在最上层 */
+}
+
+.chatbot-minimize-btn {
+    background: none; /* 无背景 */
+    border: none; /* 无边框 */
+    color: #fff; /* 文字颜色 */
+    font-size: 20px; /* 字体大小 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    margin-left: 100px; /* 距离左边20px */
+}
