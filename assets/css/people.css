@@ -7,9 +7,10 @@
     /*文本样式*/
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
-    --box_whole_height_px: 4000px;    /*整个盒子的高度*/
+    --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
+    --box_whole_height_px: 5000px;    /*整个盒子的高度*/
     --top_box_px: 50px;   /*顶部盒子的高度*/
-    --bottom_box_height_px: 3920px;    /*底部盒子的距离顶部的高度*/
+    --bottom_box_height_px: 4920px;    /*底部盒子的距离顶部的高度*/
  }
 
 * {
@@ -79,7 +80,7 @@
     top: var(--top_box_px); /* 距离顶部的偏移量 */
     width: 100%; /* 宽度占满父容器的宽度 */
     height: 98%; /* 高度占整个盒子的80% */
-    background-color: rgba(255, 255, 255, 0.808); /* 背景颜色 */
+    background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
     margin: 0; /* 移除默认的外边距 */
     padding: 0; /* 可选：设置内边距 */
 }
@@ -89,7 +90,7 @@
     position: absolute; /* 绝对定位 */
     top: 0px; /* 距离顶部0px */
     left: 50%; /* 距离左侧50% */
-    transform: translate(-50%); /* 通过transform居中 */
+    transform: translateX(-50%); /* 通过transform居中 */
     width: 1100px; /* 示例宽度 */
     height: 100%; /* 示例高度 */
     background-color: white; /* 示例背景颜色 */
@@ -437,7 +438,7 @@
 /* --------------------------------详细介绍-------------------------------- */
 .about_us{
     position: absolute;
-    top: 2300px;
+    top: 2320px;
     width: 1100px;
     height: 40px;
     background-color: rgba(0, 0, 0, 0);
@@ -447,50 +448,123 @@
     transform: translateX(-50%); /* 通过transform水平居中 */
 
     font-family: var(--text_navagation); /* 使用Calibri字体 */
+    z-index: 1000;
     display: flex; /* 使用flex布局 */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
-    font-size: 36px; /* 设置字体大小 */
+    font-size: 48px; /* 设置字体大小 */
     font-weight: bold; /* 加粗 */
     color: #333; /* 设置文字颜色 */
     margin-bottom: 0; /* 移除与头像的间距 */
 }
 
-/* -----------------学生介绍大盒子----------------- */
-.student_intro_big_box {
+/* -----------------统计信息大盒子----------------- */
+.people_info {
     position: absolute;
     top: 2350px; /* 距离About us盒子下方 */
     width: 1100px;
-    height: 1200px; /* 调整为4行，每行一个学生 */
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around; /* 水平间距均匀分布 */
+    align-items: center; /* 垂直居中 */
+    padding: 0px; /* 内边距 */
+}
+
+.people_info_back_box {
+    position: absolute;
+    top: 2300px; /* 距离About us盒子下方 */
+    width: 99vw; /* 占满整个视口宽度 */
+    height: 200px; /* 高度不变 */
+    background-color: rgb(240, 240, 240); /* 背景颜色 */
+    left: 50%; /* 从左侧50%开始 */
+    transform: translateX(-50%); /* 通过transform水平居中 */
+    z-index: -1; /* 确保它在内容下方 */
+}
+
+/* 统计信息小盒子 */
+.info_box {
+    width: 150px; /* 每个小盒子的宽度 */
+    height: 140px; /* 每个小盒子的高度 */
+    background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+}
+
+.info_box h3 {
+    font-family: var(--text_navagation); /* 使用Calibri字体 */
+    font-size: 18px; /* 设置字体大小 */
+    color: #333; /* 设置文字颜色 */
+    margin-bottom: 10px; /* 与数字的间距 */
+}
+
+.info_box p {
+    line-height: 1.5;
+    font-family: var(--text_navagation); /* 使用Calibri字体 */
+    font-size: 42px; /* 设置字体大小 */
+    color: #000000c9; /* 设置文字颜色 */
+    font-weight: bold; /* 加粗 */
+}
+
+/* -----------------标题Ph.D. student----------------- */
+.phd_student_title{
+    position: absolute;
+    top: 2520px;
+    width: 1100px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+
+    position: absolute; /* 绝对定位 */
+    font-family: var(--text_navagation); /* 使用Calibri字体 */
+    display: flex; /* 使用flex布局 */
+    justify-content: flex-start; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    font-size: 36px; /* 设置字体大小 */
+    font-weight: bold; /* 加粗 */
+    color: #333; /* 设置文字颜色 */
+    margin-bottom: 0; /* 移除与头像的间距 */
+    border-bottom: 2px solid #333; /* 添加横线 */
+    padding-bottom: 10px; /* 调整横线与文字的距离 */
+}
+
+
+/* -----------------学生介绍大盒子----------------- */
+.student_intro_big_box {
+    position: absolute;
+    top: 2580px; /* 距离About us盒子下方 */
+    width: 1100px;
+    height: 2200px; /* 调整为4行，每行一个学生 */
     background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column; /* 垂直排列 */
     justify-content: space-around; /* 垂直间距均匀分布 */
-    align-items: center; /* 水平居中 */
-    padding: 20px; /* 内边距 */
+    align-items:flex-start; /* 水平居中 */
+    padding: 0px; /* 内边距 */
 }
 
 /* 学生介绍小盒子 */
 .student_intro_box {
-    width: 800px; /* 每个小盒子的宽度 */
-    height: 250px; /* 每个小盒子的高度 */
+    width: 1100px; /* 每个小盒子的宽度 */
+    height: 400px; /* 每个小盒子的高度 */
     background-color: rgba(255, 255, 255, 0.95); /* 背景颜色 */
     display: flex;
-    align-items: center;
-    padding: 15px;
+    align-items: flex-start; /* 内容从顶部开始 */
     border-radius: 10px; /* 圆角 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-    margin-bottom: 20px; /* 下边距 */
+    margin-bottom: 0px; /* 下边距 */
+    padding-top: 0px; /* 顶部内边距，根据需要调整 */
 }
 
 /* 学生介绍图片 */
 .student_intro_image {
-    width: 150px;
-    height: 150px;
+    width: 540px;
+    height: 400px;
     overflow: hidden;
-    border-radius: 50%; /* 圆形图片 */
     margin-right: 20px; /* 图片与文本的间距 */
 }
 
@@ -503,20 +577,60 @@
 /* 学生介绍文本 */
 .student_intro_text {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 内容从顶部开始 */
+    align-items: flex-start; /* 左对齐 */
+    padding-top: 0; /* 移除顶部内边距 */
 }
 
+/* 姓名 */
 .student_intro_text h3 {
-    font-family: var(--text_navagation); /* 使用Calibri字体 */
-    font-size: 24px; /* 设置字体大小 */
+    font-family: var(--text_people_intro); /* 使用Open Sans字体 */
+    font-size: 40px; /* 设置字体大小 */
     color: #333; /* 设置文字颜色 */
     margin-bottom: 10px; /* 与段落的间距 */
+    transition: font-size 0.3s ease; /* 添加过渡效果 */
 }
 
-.student_intro_text p {
+.student_intro_text h3:hover{
+    color: rgb(255, 123, 0);
+}
+
+/* 学位&兴趣 */
+.student_intro_text h4 {
     font-family: var(--text_navagation); /* 使用Calibri字体 */
+    font-size: 20px; /* 设置字体大小 */
+    color: #333; /* 设置文字颜色 */
+    margin-bottom: 8px; /* 与段落的间距 */
+}
+
+/* 介绍 */
+.student_intro_text p {
+    font-family: var(--text_people_intro); /* 使用Open Sans字体 */
     font-size: 16px; /* 设置字体大小 */
+    font-weight: 450; /* 设置字体粗细 */
+    font-style: normal; /* 设置字体样式 */
     color: #555; /* 设置文字颜色 */
     line-height: 1.5; /* 行高 */
+    margin-bottom: 8px; /* 段后间距，根据需要调整 */
+    text-align: justify;
+}
+
+/*  个人链接样式  */
+.student_intro_text a {
+    color: black; /* 设置链接颜色为黑色 */
+    text-decoration: underline; /* 添加下划线 */
+    font-family: var(--text_people_intro); /* 使用Open Sans字体 */
+    font-size: 16px; /* 设置字体大小 */
+    font-weight: 450; /* 设置字体粗细 */
+    font-style: normal; /* 设置字体样式 */
+    line-height: 1.2; /* 行高 */
+}
+
+.student_intro_text a:hover {
+    color: #555; /* 鼠标悬停时颜色变浅 */
+    text-decoration: underline; /* 保持下划线 */
 }
 
 /* --------------------------------3.底部大盒子-------------------------------- */
