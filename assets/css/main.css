@@ -467,6 +467,13 @@
     display: flex; /* 使用flex布局 */
     flex-direction: column; /* 垂直排列 */
     z-index: 1000; /* 确保在最上层 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.chatbot-container.hidden {
+    opacity: 0; /* 隐藏时透明度为0 */
+    transform: translateY(20px); /* 向下移动20px */
+    pointer-events: none; /* 禁用交互 */
 }
 
 .chatbot-header {
@@ -584,6 +591,13 @@
     cursor: pointer; /* 鼠标悬停时显示手型 */
     display: none; /* 默认隐藏 */
     z-index: 1000; /* 确保在最上层 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.chatbot-toggle-btn.visible {
+    display: block; /* 显示悬浮按钮 */
+    opacity: 1; /* 透明度为1 */
+    transform: translateY(0); /* 恢复位置 */
 }
 
 .chatbot-minimize-btn {

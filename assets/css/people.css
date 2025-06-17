@@ -180,8 +180,8 @@
     background-image: url(../images/people_img/cat.jpg); /* 替换为第二张图片路径 */
 }
 
-.teacher_image[data-hover-image="wang_teacher_2"]::before {
-    background-image: url(../images/people_img/wang_teacher_2.jpg); /* 替换为第二张图片路径 */
+.teacher_image[data-hover-image="Li_teacher_2"]::before {
+    background-image: url(../images/people_img/lijie/lijie_2.jpg); /* 替换为第二张图片路径 */
 }
 
 .teacher_image:hover::before {

@@ -127,15 +127,16 @@ chatbotCloseBtn.addEventListener("click", () => {
 
 // 处理最小化按钮
 chatbotMinimizeBtn.addEventListener("click", () => {
-    chatbotContainer.style.display = "none";
-    chatbotToggleBtn.style.display = "block";
+    chatbotContainer.classList.add("hidden"); // 添加隐藏类
+    chatbotToggleBtn.classList.add("visible"); // 显示悬浮按钮
 });
 
 // 处理悬浮按钮
 chatbotToggleBtn.addEventListener("click", () => {
-    chatbotContainer.style.display = "block";
-    chatbotToggleBtn.style.display = "none";
+    chatbotContainer.classList.remove("hidden"); // 移除隐藏类
+    chatbotToggleBtn.classList.remove("visible"); // 隐藏悬浮按钮
     chatbotInput.focus(); // 重新聚焦到输入框
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // 滚动到底部
 });
 
 // 逐字显示消息
