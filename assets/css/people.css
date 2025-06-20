@@ -8,9 +8,9 @@
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
     --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
-    --box_whole_height_px: 5000px;    /*整个盒子的高度*/
+    --box_whole_height_px: 12000px;    /*整个盒子的高度*/
     --top_box_px: 50px;   /*顶部盒子的高度*/
-    --bottom_box_height_px: 4920px;    /*底部盒子的距离顶部的高度*/
+    --bottom_box_height_px: 11920px;    /*底部盒子的距离顶部的高度*/
  }
 
 * {
@@ -373,6 +373,10 @@
     transition: opacity 0.3s ease; /* 添加过渡效果 */
 }
 
+.student_image[data-hover-image="ganlu_2"]::before {
+    background-image: url(../images/people_img/ganlu/ganlu_4.jpg); /* 替换为第二张图片路径 */
+}
+
 /* 1 */
 .student_image[data-hover-image="chengyuhan_2"]::before {
     background-image: url(../images/people_img/chengyuha/chengyuhan_2.png); /* 替换为第二张图片路径 */
@@ -398,6 +402,11 @@
     background-image: url(../images/people_img/caolong/caolong_2.png); /* 替换为第二张图片路径 */
 }
 
+/* 5 */
+.student_image[data-hover-image="qiankelin_2"]::before {
+    background-image: url(../images/people_img/qiankelin/qiankelin_2.jpg); /* 替换为第二张图片路径 */
+}
+
 /* 6 */
 .student_image[data-hover-image="kangbingxiang_2"]::before {
     background-image: url(../images/people_img/kangbingxiang/kangbingxiang_2.jpeg); /* 替换为第二张图片路径 */
@@ -421,6 +430,11 @@
 /* 10 */
 .student_image[data-hover-image="shaojinyuan_2"]::before {
     background-image: url(../images/people_img/shaojinyuan/shaojinyuan_2.jpg); /* 替换为第二张图片路径 */
+}
+
+/* 10 */
+.student_image[data-hover-image="libo_2"]::before {
+    background-image: url(../images/people_img/libo/libo_2.png); /* 替换为第二张图片路径 */
 }
 
 .student_image:hover::before {
@@ -533,11 +547,11 @@
 
 
 /* -----------------学生介绍大盒子----------------- */
-.student_intro_big_box {
+.phd_student_intro_big_box {
     position: absolute;
     top: 2580px; /* 距离About us盒子下方 */
     width: 1100px;
-    height: 2200px; /* 调整为4行，每行一个学生 */
+    height: 3200px; /*每行一个学生 */
     background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
     left: 50%;
     transform: translateX(-50%);
@@ -631,6 +645,43 @@
 .student_intro_text a:hover {
     color: #555; /* 鼠标悬停时颜色变浅 */
     text-decoration: underline; /* 保持下划线 */
+}
+
+/* -----------------标题master's student----------------- */
+.master_student_title{
+    position: absolute;
+    top: 5770px;
+    width: 1100px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+
+    position: absolute; /* 绝对定位 */
+    font-family: var(--text_navagation); /* 使用Calibri字体 */
+    display: flex; /* 使用flex布局 */
+    justify-content: flex-start; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    font-size: 36px; /* 设置字体大小 */
+    font-weight: bold; /* 加粗 */
+    color: #333; /* 设置文字颜色 */
+    margin-bottom: 0; /* 移除与头像的间距 */
+    border-bottom: 2px solid #333; /* 添加横线 */
+    padding-bottom: 10px; /* 调整横线与文字的距离 */
+}
+
+/* ---------------硕士学生大盒子---------------- */
+.master_student_intro_big_box{
+    position: absolute;
+    top: 5820px; /* 距离About us盒子下方 */
+    width: 1100px;
+    height: 6000px; /*每行一个学生 */
+    background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: space-around; /* 垂直间距均匀分布 */
+    align-items:flex-start; /* 水平居中 */
+    padding: 0px; /* 内边距 */
 }
 
 /* --------------------------------3.底部大盒子-------------------------------- */
