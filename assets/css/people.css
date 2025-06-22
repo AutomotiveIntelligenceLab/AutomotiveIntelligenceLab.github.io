@@ -438,7 +438,19 @@
 }
 
 .student_image[data-hover-image="like_2"]::before {
-    background-image: url(../images/people_img/like/like_2.jpg); /* 替换为第二张图片路径 */
+    background-image: url(../images/people_img/like/like_5.jpg); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="guochenfei_2"]::before {
+    background-image: url(../images/people_img/guochenfei/guochenfei_2.png); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="zoujie_2"]::before {
+    background-image: url(../images/people_img/zoujie/zoujie_2.png); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="wangyingcheng_2"]::before {
+    background-image: url(../images/people_img/wangyincheng/wangyincgheng_2.jpg); /* 替换为第二张图片路径 */
 }
 
 .student_image:hover::before {
