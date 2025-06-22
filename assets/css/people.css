@@ -437,6 +437,10 @@
     background-image: url(../images/people_img/libo/libo_2.png); /* 替换为第二张图片路径 */
 }
 
+.student_image[data-hover-image="like_2"]::before {
+    background-image: url(../images/people_img/like/like_2.jpg); /* 替换为第二张图片路径 */
+}
+
 .student_image:hover::before {
     opacity: 1; /* 鼠标悬停时显示第二张图片 */
 }
