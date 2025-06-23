@@ -231,7 +231,7 @@
 
 .show_img {
     display: flex;
-    width: 3416px; /* 854px * 4张图片 */
+    width: 4270px; /* 854px * 5张图片    如果需要加图片，这里需要调整大小哦~~~~~~~~~~ */
     transform: translateX(0); /* 初始状态不应用图片X轴水平轮播 */
     transition: transform 0.5s ease-in-out; /* 图片轮播过渡效果0.5秒 */
 }
@@ -449,8 +449,16 @@
     background-image: url(../images/people_img/zoujie/zoujie_2.png); /* 替换为第二张图片路径 */
 }
 
-.student_image[data-hover-image="wangyingcheng_2"]::before {
-    background-image: url(../images/people_img/wangyincheng/wangyincgheng_2.jpg); /* 替换为第二张图片路径 */
+.student_image[data-hover-image="wangyingchen_2"]::before {
+    background-image: url(../images/people_img/wangyincheng/wangyingchen_2.jpg); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="huotianci_2"]::before {
+    background-image: url(../images/people_img/huotianci/huotianci_2.jpg); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="yuhai_2"]::before {
+    background-image: url(../images/people_img/yuhai/yuhai_2.png); /* 替换为第二张图片路径 */
 }
 
 .student_image:hover::before {
