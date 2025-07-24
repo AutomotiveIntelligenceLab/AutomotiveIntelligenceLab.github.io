@@ -1,0 +1,236 @@
+/* 研究展示容器 */
+
+/*页面通用设置*/
+
+:root {
+    /*通用颜色*/
+    --black:  rgb(0, 0, 0);
+    --white:  rgb(255, 255, 255);
+    /*文本样式*/
+    --text_navagation: Calibri;
+    --text_top_lab_name: Andale Mono;
+    --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
+    --box_whole_height_px: 2000px;    /*整个盒子的高度*/
+    --top_box_px: 50px;   /*顶部盒子的高度*/
+    --bottom_box_height_px: 1950px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 80px*/
+ }
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.box_whole {
+    background-color: rgba(0, 0, 0, 0); 
+    width: 100%;
+    height: var(--box_whole_height_px); /* 固定高度为2000px */
+    padding: 0px; /* 可选：设置内边距 */
+    position: absolute; /* 设置定位属性为绝对定位 */
+    top: 0px; /* 设置距离顶部的偏移量 */
+    left: 0px; /* 设置距离左侧的偏移量 */
+    margin: 0; /* 移除默认的外边距 */
+}
+
+/* --------------------------------1.顶部大盒子-------------------------------- */
+.box_top {
+    position: absolute; /* 绝对定位 */
+    width: 100%; /* 宽度占满父容器的宽度 */
+    height: var(--top_box_px); /* 高度占整个盒子的10% */
+    background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
+    margin: 0; /* 移除默认的外边距 */
+    padding: 0; /* 可选：设置内边距 */
+}
+
+.top_header {
+    position: fixed; /* 固定定位 */
+    top: 0px; /* 距离顶部0px */
+    left: 50%; /* 距离左侧50% */
+    transform: translate(-50%); /* 通过transform居中 */
+    width: 1100px; /* 示例宽度 */
+    height: 50px; /* 示例高度 */
+    background-color: rgba(0, 0, 0, 0); /* 半透明背景颜色 */
+    backdrop-filter: blur(10px); /* 玻璃模糊效果 */
+    margin: 0; /* 移除默认的外边距 */
+    padding: 0; /* 可选：设置内边距 */
+    display: flex; /* 设置为flex容器 */
+    justify-content: space-around; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    z-index: 1000; /* 确保导航栏在最上层 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 添加底部边框，增强玻璃效果 */
+}
+
+.header_text{
+    text-decoration: none; /* 移除下划线 */
+    color: rgb(0, 0, 0);
+    font-family: var(--text_navagation); /*设置字体*/
+    font-size: 30px; /*设置字体大小*/
+}
+
+/*鼠标悬停顶部导航栏变成橙色*/
+.header_text:hover{
+    color: rgb(255, 123, 0);
+}
+
+/* -----------------1.2顶部标题栏----------------- */
+
+
+/* --------------------------------2.中间大盒子-------------------------------- */
+.box_center {
+    position: absolute; /* 绝对定位 */
+    top: var(--top_box_px); /* 距离顶部的偏移量 */
+    width: 100%; /* 宽度占满父容器的宽度 */
+    height: 98%; /* 高度占整个盒子的80% */
+    background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
+    margin: 0; /* 移除默认的外边距 */
+    padding: 0; /* 可选：设置内边距 */
+}
+
+/* -----------------2.1居中的盒子----------------- */
+.center_middle {
+    position: absolute; /* 绝对定位 */
+    top: 0px; /* 距离顶部0px */
+    left: 50%; /* 距离左侧50% */
+    transform: translateX(-50%); /* 通过transform居中 */
+    width: 1100px; /* 示例宽度 */
+    height: 100%; /* 示例高度 */
+    background-color: rgba(0, 0, 0, 0); /* 示例背景颜色 */
+    margin: 0; /* 移除默认的外边距 */
+    padding: 0; /* 可选：设置内边距 */
+    display: block; /* 移除 flex 布局 */
+    text-align: left; /* 确保内容靠左 */
+    overflow-y: auto; /* 允许内容滚动 */
+}
+
+/* 论文容器 */
+.papers_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+/* 过滤按钮 */
+.filter_buttons {
+    margin-bottom: 20px;
+}
+
+.filter_button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.filter_button.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* 论文列表 */
+.papers_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.paper_item {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 0;
+    transition: box-shadow 0.2s;
+}
+.paper_item:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.paper_content_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.paper_img_box {
+    width: 150px;
+    height: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #f3f3f3;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.paper_img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片填充整个框，保持比例 */
+    display: block;
+}
+
+.paper_text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.paper_text h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 4px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+}
+.paper_item:hover .paper_text h2 {
+    color: #007bff;
+}
+
+.paper_text .authors {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 2px;
+    line-height: 1.3;
+    font-family: "Open Sans", "微软雅黑", Arial, sans-serif;
+}
+
+.paper_text .year {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.paper_text .links {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.paper_text .links a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.paper_text .links a:hover {
+    background: #e6f0ff;
+    color: #0056b3;
+    text-decoration: underline;
+}
