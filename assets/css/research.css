@@ -1,7 +1,4 @@
-/* 研究展示容器 */
-
 /*页面通用设置*/
-
 :root {
     /*通用颜色*/
     --black:  rgb(0, 0, 0);
@@ -10,7 +7,7 @@
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
     --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
-    --box_whole_height_px: 2800px;    /*整个盒子的高度*/
+    --box_whole_height_px: 2900px;    /*整个盒子的高度*/
     --top_box_px: 50px;   /*顶部盒子的高度*/
     --bottom_box_height_px: 2850px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 80px*/
  }
@@ -121,39 +118,53 @@
     text-align: left; /* 标题靠左对齐 */
 }
 
-/* 机器人列表 */
-.robots_list {
+/* 项目列表 */
+.research_list {
     display: flex;
     flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
     gap: 20px;
     text-align: left; /* 机器人列表内容靠左对齐 */
 }
 
-/* 机器人项目容器 */
-.robot_item {
+/* 项目容器 */
+.research_item {
     background-color: #fff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);        每个项目的阴影效果框框 */    
     text-align: left; /* 内容靠左对齐 */
+}
+
+.research_titile{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* 项目标题样式 */
+.research_titile h2{
+    font-size: 28px;
+    text-align: justify; /* 内容靠左对齐 */
 }
 
 /* 内容包装器 */
 .content_wrapper {
     display: flex; /* 使用 flex 布局 */
     flex-direction: row; /* 默认方向，文字在左，图片在右 */
+    background-color: rgba(0, 0, 0, 0);
     gap: 20px; /* 图片和文字之间的间距 */
     align-items: flex-start; /* 内容从顶部对齐 */
 }
 
+
 /* 图片展示框 */
 .image_box {
     width: 600px; /* 固定宽度 */
-    height: 400px; /* 固定高度 */
+    height: 300px; /* 固定高度 */
+    margin: 20px 0; /* 上下边距 */
     border-radius: 10px; /* 圆角 */
     overflow: hidden; /* 防止图片溢出 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-    flex-shrink: 0; /* 防止图片缩小 */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 阴影效果 */
 }
 
 .image_box img {
@@ -178,11 +189,14 @@
     align-self: flex-start; /* 标题在顶部 */
 }
 
+/* 项目内容样式 */
 .text_content .description {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+    line-height: 1.4; /* 增加行高，提升可读性 */
+    font-family: "Helvetica Neue", Arial, sans-serif; /* 使用更现代的英文字体 */
+    text-align: justify ; /* 左对齐 */
 }
 
 /* 标签部分 */
@@ -204,16 +218,104 @@
 .links {
     display: flex;
     gap: 10px;
+    margin-left: auto; /* 将链接推到右侧 */
 }
 
 .links a {
     color: #007bff;
     text-decoration: none;
     font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    transition: background 0.2s, color 0.2s;
 }
 
 .links a:hover {
+    background: #00000000;
+    color: #567699;
     text-decoration: underline;
+}
+
+/* 相关链接，比如项目的github和论文paper */
+.relevant_links{
+    width: 420px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+}
+
+.github_link {
+    width: 100px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    border-radius: 5px;
+    text-decoration: none; /* 移除下划线 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    transition: background-color 0.2s; /* 添加过渡效果 */
+}
+
+.github_link:hover {
+    background-color: rgba(97, 95, 95, 0.5); /* 悬停背景色 */
+}
+
+.github_icon {
+    width: 30px; /* 图标宽度 */
+    height: 30px; /* 图标高度 */
+    object-fit: contain; /* 保持图标比例 */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.github_text {
+    line-height: 30px;
+    text-align: center;
+    width: 60px;
+    font-size: 14px;
+    color: #000000;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif; /* 使用更现代的英文字体 */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.paper_link{
+    width: 100px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    border-radius: 5px;
+    text-decoration: none; /* 移除下划线 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    transition: background-color 0.2s; /* 添加过渡效果 */
+}
+
+.paper_link:hover{
+    background-color: rgba(97, 95, 95, 0.5);
+}
+
+.paper_icon {
+    width: 30px; /* 图标宽度 */
+    height: 30px; /* 图标高度 */
+    object-fit: contain; /* 保持图标比例 */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.paper_text {
+    line-height: 30px;
+    text-align: center;
+    width: 60px;
+    font-size: 14px;
+    color: #000000;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif; /* 使用更现代的英文字体 */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.learn_more_link{
+    width: 135px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    line-height: 25px;
+    text-align: center;
 }
 
 /* 其他设施部分 */
@@ -234,19 +336,40 @@
     line-height: 1.5;
 }
 
-/* 图片展示框 */
-.image_box {
-    width: 600px; /* 固定宽度 */
-    height: 300px; /* 固定高度 */
-    margin: 20px 0; /* 上下边距 */
-    border-radius: 10px; /* 圆角 */
-    overflow: hidden; /* 防止图片溢出 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+/* --------------------------------3.底部大盒子-------------------------------- */
+.box_bottom {
+    position: absolute; /* 绝对定位 */
+    top: var(--bottom_box_height_px); /* 距离顶部的偏移量为90% */
+    width: 100%; /* 宽度占满父容器的宽度 */
+    height: 80px; /* 高度占整个盒子的10% */
+    background-color: rgb(54, 54, 54); /* 背景颜色 */
+    margin: 0; /* 移除默认的外边距 */
+    padding: 0; /* 可选：设置内边距 */
 }
 
-.image_box img {
-    width: 100%; /* 图片宽度占满容器 */
-    height: 100%; /* 图片高度占满容器 */
-    object-fit: cover; /* 确保图片填充整个框，保持比例 */
-    display: block; /* 防止图片下方出现空白 */
+/* -----------------3.1居中的盒子----------------- */
+.bottom_middle {
+    position: absolute; /* 绝对定位 */
+    top: 0px; /* 距离顶部0px */
+    left: 50%; /* 距离左侧50% */
+    transform: translate(-50%); /* 通过transform居中 */
+    width: 1100px; /* 示例宽度 */
+    height: 100%; /* 示例高度 */
+    background-color: rgba(255, 255, 255, 0); /* 示例背景颜色 */
+    margin: 0; /* 移除默认的外边距 */
+    padding: 0; /* 可选：设置内边距 */
+    display: flex; /* 设置为flex容器 */
+    justify-content: space-around; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+
+.bottom_text_1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 0px; /*距离div高10px*/
+    font-size: 18px; /*设置字体大小*/
+    font-family: STfangsong; /*设置字体*/
+    line-height: 1.5; /*行高*/
+    font-weight: bold;
 }
