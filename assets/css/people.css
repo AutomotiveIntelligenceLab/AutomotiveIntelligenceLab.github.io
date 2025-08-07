@@ -8,11 +8,19 @@
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
     --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
-    --box_whole_height_px: 18700px;    /*整个盒子的高度*/
+    --box_whole_height_px: 19100px;    /*整个盒子的高度*/
     --top_box_px: 50px;   /*顶部盒子的高度*/
-    --bottom_box_height_px: 18650px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 50px*/
-    --master_box_height: 12780px; /* 硕士盒子总高 */
+    --info_box_height: 2680px;   /* 信息统计盒子高度 */
+    --about_us_top: 2700px;   /* About Us 文字距离顶部的高度    about_us_top = info_box_height + 20px */
+    --info_people_box_top: 2730px;   /* Ph.D. Master's Staff 等统计信息距离顶部的高度 */
+    --phd_title_top: 2900px;  /* 博士Ph.D. Student标题距离顶部的高度 */
+    --phd_box_top: 2950px;    /* 博士盒子距离顶部的高度 */
     --phd_box_height: 3200px;  /* 博士盒子总高 */
+    --master_title_top: 6150px;     /* 硕士Master's Student标题距离顶部的高度 */
+    --master_box_top: 6220px; /*硕士盒子距离顶部的高度*/
+    --master_box_height: 12780px; /* 硕士盒子总高 */
+    --bottom_box_height_px: 19050px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 50px*/
+
  }
 
 * {
@@ -22,7 +30,7 @@
     text-decoration: none;
 }
 
-.box_whole {
+.box_wholshiyicui {
     background-color: rgba(0, 0, 0, 0); 
     width: 100%;
     height: var(--box_whole_height_px); /* 固定高度为2000px */
@@ -352,6 +360,15 @@
     position: relative; /* 相对定位 */
 }
 
+/* 多余的空出来的盒子，做隐藏处理 */
+.student_image_hidden{
+    width: 180px; /* 宽度 */
+    height: 180px; /* 高度 */
+    overflow: hidden; /* 防止图片溢出 */
+    border: 2px solid #fff; /* 边框 */
+    position: relative; /* 相对定位 */
+}
+
 .student_image img {
     width: 100%;
     height: 100%;
@@ -374,6 +391,8 @@
     opacity: 0; /* 默认隐藏 */
     transition: opacity 0.3s ease; /* 添加过渡效果 */
 }
+
+/* 下面的都是头像展示栏的变换第二张图片 */
 
 .student_image[data-hover-image="ganlu_2"]::before {
     background-image: url(../images/people_img/ganlu/ganlu_4.jpg); /* 替换为第二张图片路径 */
@@ -487,6 +506,50 @@
     background-image: url(../images/people_img/fangying/fangying_2.png); /* 替换为第二张图片路径 */
 }
 
+.student_image[data-hover-image="huqian_2"]::before {
+    background-image: url(../images/people_img/huqian/huqian_4.jpg); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="shiyicui_2"]::before {
+    background-image: url(../images/people_img/shiyicui/shiyicui_2.png); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="liangshuang_2"]::before {
+    background-image: url(../images/people_img/liangshuang/liangshuang_2.png); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="panyucheng_2"]::before {
+    background-image: url(../images/people_img/panyucheng/panyucheng_2.jpeg); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="zhouyi_2"]::before {
+    background-image: url(../images/people_img/zhouyi/zhouyi_2.jpg); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="shenyu_2"]::before {
+    background-image: url(../images/people_img/shenyu/shenyu_2.jpg); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="yangchen_2"]::before {
+    background-image: url(../images/people_img/yangchen/yaochen_2.png); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="chenrende_2"]::before {
+    background-image: url(../images/people_img/chenrende/chenrende_2.jpg); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="yuwenxuan_2"]::before {
+    background-image: url(../images/people_img/yuwenxuan/yuwenxuan_2.png); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="weiyuhao_2"]::before {
+    background-image: url(../images/people_img/weiyuhao/weiyuhao_2.png); /* 替换为第二张图片路径 */
+}
+
+.student_image[data-hover-image="wangzhongquan_2"]::before {
+    background-image: url(../images/people_img/wangzhongquan/wangzhongquan_2.jpg); /* 替换为第二张图片路径 */
+}
+
 .student_image:hover::before {
     opacity: 1; /* 鼠标悬停时显示第二张图片 */
 }
@@ -502,7 +565,7 @@
 /* --------------------------------详细介绍-------------------------------- */
 .about_us{
     position: absolute;
-    top: 2320px;
+    top: var(--about_us_top);
     width: 1100px;
     height: 40px;
     background-color: rgba(0, 0, 0, 0);
@@ -525,7 +588,7 @@
 /* -----------------统计信息大盒子----------------- */
 .people_info {
     position: absolute;
-    top: 2350px; /* 距离About us盒子下方 */
+    top: var(--info_people_box_top); /* 距离About us盒子下方 */
     width: 1100px;
     height: 150px;
     background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
@@ -539,7 +602,7 @@
 
 .people_info_back_box {
     position: absolute;
-    top: 2300px; /* 距离About us盒子下方 */
+    top: var(--info_box_height); /* 距离About us盒子下方 */
     width: 99vw; /* 占满整个视口宽度 */
     height: 200px; /* 高度不变 */
     background-color: rgb(240, 240, 240); /* 背景颜色 */
@@ -577,7 +640,7 @@
 /* -----------------标题Ph.D. student----------------- */
 .phd_student_title{
     position: absolute;
-    top: 2520px;
+    top: var(--phd_title_top);
     width: 1100px;
     height: 40px;
     background-color: rgba(0, 0, 0, 0);
@@ -599,7 +662,7 @@
 /* -----------------学生介绍大盒子----------------- */
 .phd_student_intro_big_box {
     position: absolute;
-    top: 2580px; /* 距离About us盒子下方 */
+    top: var(--phd_box_top); /* 距离About us盒子下方 */
     width: 1100px;
     height: var(--phd_box_height); /*每行一个学生 */
     background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
@@ -700,7 +763,7 @@
 /* -----------------标题master's student----------------- */
 .master_student_title{
     position: absolute;
-    top: 5770px;
+    top: var(--master_title_top);
     width: 1100px;
     height: 40px;
     background-color: rgba(0, 0, 0, 0);
@@ -721,7 +784,7 @@
 /* ---------------硕士学生大盒子---------------- */
 .master_student_intro_big_box{
     position: absolute;
-    top: 5820px; /* 距离About us盒子下方 */
+    top: var(--master_box_top); /* 距离About us盒子下方 */
     width: 1100px;
     height: var(--master_box_height); /*每行一个学生 */
     background-color: rgba(0, 0, 0, 0); /* 背景颜色 */

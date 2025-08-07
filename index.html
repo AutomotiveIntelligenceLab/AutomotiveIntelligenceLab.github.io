@@ -174,10 +174,72 @@
         <!-- 3.底部大盒子 -->
         <div class="box_bottom">
             <div class="bottom_middle">
-                <p class="bottom_text_1">Teaching Building 7, Zone A, No. 174 Shazheng Street, Shapingba District, Chongqing, China, 400030| Phone: 12345678 | Email: 12345678@123.com<br>Copyright © 2025 Automotive Intelligence Lab</p>
+                <p class="bottom_text_1">
+                    <!-- 网页底部文本 -->
+                    Teaching Building 7, Zone A, No. 174 Shazheng Street, Shapingba District, Chongqing, China, 400030 | Phone: 12345678 | Email: 12345678@123.com<br>
+                    <!-- 网页访问统计 -->
+                    <span id="visit-counter"></span> 
+                    | Copyright © 2025 Automotive Intelligence Lab
+                </p>
             </div>
-
         </div>
+
+        <!-- 网页访问量统计js代码 -->
+        <script>
+            var caution = false;
+
+            function setCookie(name, value, expires, path, domain, secure) {
+                var curCookie = name + "=" + escape(value) +
+                    ((expires) ? "; expires=" + expires.toGMTString() : "") +
+                    ((path) ? "; path=" + path : "") +
+                    ((domain) ? "; domain=" + domain : "") +
+                    ((secure) ? "; secure" : "");
+
+                if (!caution || (name + "=" + escape(value)).length <= 4000)
+                    document.cookie = curCookie;
+                else if (confirm("Cookie exceeds 4KB and will be cut!"))
+                    document.cookie = curCookie;
+            }
+
+            function getCookie(name) {
+                var prefix = name + "=";
+                var cookieStartIndex = document.cookie.indexOf(prefix);
+                if (cookieStartIndex == -1) return null;
+
+                var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length);
+                if (cookieEndIndex == -1) cookieEndIndex = document.cookie.length;
+
+                return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex));
+            }
+
+            function deleteCookie(name, path, domain) {
+                if (getCookie(name)) {
+                    document.cookie = name + "=" +
+                        ((path) ? "; path=" + path : "") +
+                        ((domain) ? "; domain=" + domain : "") +
+                        "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+                }
+            }
+
+            function fixDate(date) {
+                var base = new Date(0);
+                var skew = base.getTime();
+                if (skew > 0) date.setTime(date.getTime() - skew);
+            }
+
+            var now = new Date();
+            fixDate(now);
+            now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000);
+
+            var visits = getCookie("counter");
+            if (!visits) visits = 1;
+            else visits = parseInt(visits) + 1;
+
+            setCookie("counter", visits, now);
+
+            // 将访问量显示在页面上
+            document.getElementById("visit-counter").innerText = "Welcome to AutoI Lab, You're Our " + visits + " Visitor";
+        </script>
 
         <!-- 课题组网页AI机器人对话框 -->
         <div class="chatbot-container">

@@ -453,6 +453,16 @@
     font-weight: bold;
 }
 
+#visit-counter {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 0px; /*距离div高10px*/
+    font-size: 18px; /*设置字体大小*/
+    font-family: STfangsong; /*设置字体*/
+    line-height: 1.5; /*行高*/
+    font-weight: bold;
+}
+
 
 /* -----------------------课题组网页聊天机器人设置---------------------- */
 .chatbot-container {
