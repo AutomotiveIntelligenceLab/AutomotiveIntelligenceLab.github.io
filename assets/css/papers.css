@@ -106,8 +106,10 @@
 /* 论文容器 */
 .papers_container {
     max-width: 1200px;
+    background-color: #00000000;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
+    padding-left: 20px;
     text-align: left;
 }
 
@@ -128,7 +130,7 @@
 }
 
 .filter_button.active {
-    background-color: #007bff;
+    background-color: #000000;
     color: #fff;
 }
 
@@ -136,31 +138,31 @@
 .papers_list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;  /* 每个论文框框之间的间距 */
 }
 
 .paper_item {
-    background-color: #fff;
-    padding: 15px 20px;
+    background-color: #00000000;
+    padding: 3px 3px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.08);   盒子阴影（可以删了） */
     margin-bottom: 0;
     transition: box-shadow 0.2s;
 }
-.paper_item:hover {
+/* .paper_item:hover {
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
+} */
 
 .paper_content_wrapper {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 18px;
+    gap: 18px; /* 图像与文字的间隙 */
 }
 
 .paper_img_box {
-    width: 150px;
-    height: 120px;
+    width: 180px;
+    height: 150px;
     border-radius: 6px;
     overflow: hidden;
     background: #f3f3f3;
@@ -168,7 +170,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    /* box-shadow: 0 2px 6px rgba(0,0,0,0.08); */
 }
 
 .paper_img_box img {
@@ -189,39 +191,39 @@
     font-size: 18px;
     font-weight: 600;
     color: #222;
-    margin-bottom: 4px;
+    margin-bottom: 18px;
     line-height: 1.4;
     letter-spacing: 0.02em;
     transition: color 0.2s;
 }
-.paper_item:hover .paper_text h2 {
-    color: #007bff;
+
+.paper_text h2:hover {
+    color: rgba(228, 113, 19, 0.904);
 }
 
 .paper_text .authors {
     font-size: 15px;
-    color: #444;
-    margin-bottom: 2px;
+    color: #000000;
+    margin-bottom: 5px;
     line-height: 1.3;
     font-family: "Open Sans", "微软雅黑", Arial, sans-serif;
 }
 
 .paper_text .year {
     font-size: 13px;
-    color: #888;
-    margin-bottom: 8px;
-    font-style: italic;
+    color: #000000;
+    margin-bottom: 5px;
     line-height: 1.2;
 }
 
 .paper_text .links {
     display: flex;
-    gap: 10px;
+    gap: 2px;
     margin-bottom: 0;
 }
 
 .paper_text .links a {
-    color: #007bff;
+    color: #233e66;
     text-decoration: none;
     font-size: 14px;
     padding: 2px 6px;

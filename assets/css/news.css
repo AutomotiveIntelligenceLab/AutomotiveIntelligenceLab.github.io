@@ -8,6 +8,10 @@
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
     --box_logo: 40px;  /*github、youtube、bilibili图标大小*/
+
+    --box_whole_px: 2650px;   /* 整个页面的高度 */
+    --center_middle_box_height: 2520px;   /* 中间盒子的整体高度 */
+    --box_bottom_top: 2600px;   /* 底部信息栏距离顶部的高度 */
  }
 
 * {
@@ -20,7 +24,7 @@
 .box_whole {
     background-color: rgba(0, 0, 0, 0); 
     width: 100%;
-    height: 2200px; /* 固定高度为2000px   初始是1500px*/   
+    height: var(--box_whole_px); /* 固定高度为2000px   初始是1500px*/   
     padding: 0px; /* 可选：设置内边距 */
     position: absolute; /* 设置定位属性为绝对定位 */
     top: 0px; /* 设置距离顶部的偏移量 */
@@ -108,10 +112,10 @@
 /* --------------------------------2.中间大盒子-------------------------------- */
 .box_center {
     position: absolute; /* 绝对定位 */
-    top: 6%; /* 距离顶部的偏移量为10% */
+    top: 50px; /* 距离顶部的偏移量为10% */
     width: 100%; /* 宽度占满父容器的宽度 */
-    height: 94%; /* 高度占整个盒子的80% */
-    background-color: rgba(255, 255, 255, 0.808); /* 背景颜色 */
+    height: 100%; /* 高度占整个盒子*/
+    background-color: rgba(0, 0, 0, 0); /* 背景颜色 */
     margin: 0; /* 移除默认的外边距 */
     padding: 0; /* 可选：设置内边距 */
 }
@@ -123,8 +127,8 @@
     left: 50%; /* 距离左侧50% */
     transform: translate(-50%); /* 通过transform居中 */
     width: 1100px; /* 示例宽度 */
-    height: 100%; /* 示例高度 */
-    background-color: white; /* 示例背景颜色 */
+    height: var(--center_middle_box_height); /* 示例高度 */
+    background-color: rgba(0, 0, 0, 0); /* 示例背景颜色 */
     margin: 0; /* 移除默认的外边距 */
     padding: 0; /* 可选：设置内边距 */
     display: flex; /* 设置为flex容器 */
@@ -132,12 +136,112 @@
     align-items: center; /* 垂直居中 */
 }
 
+/* 新闻容器 */
+.news_container {
+    max-width: 1100px;
+    padding-left: 20px;
+    background-color: #00000000;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+/* 年份标题 */
+.news_year h2 {
+    font-size: 28px;
+    color: #000000;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+}
+
+/* 新闻项 */
+.news_item {
+    background-color: rgba(0, 0, 0, 0);
+    display: flex; /* 使用 flex 布局 */
+    justify-content: space-between; /* 内容在左侧，图片在右侧 */
+    align-items: flex-start; /* 顶部对齐 */
+    margin-bottom: 20px;
+    padding: 0px;
+    transition: box-shadow 0.3s;
+}
+
+/* 新闻内容 */
+.news_content {
+    flex: 1; /* 内容占据剩余空间 */
+    margin-right: 10px; /* 与图片的间距 */
+}
+
+/* 新闻图片框 */
+.news_image {
+    width: 480px; /* 图片框宽度 */
+    height: 300px; /* 图片框高度 */
+    border-radius: 0px;
+    overflow: hidden; /* 防止图片溢出 */
+    flex-shrink: 0; /* 防止图片框缩小 */
+}
+
+.news_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片填充整个框，保持比例 */
+    display: block;
+}
+
+/* 新闻日期 */
+.news_date {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 5px;
+    display: flex; /* 使用 flex 布局 */
+    align-items: center; /* 垂直居中 */
+    gap: 8px; /* 图片与日期的间距 */
+    font-weight: bold; /* 文字加粗 */
+}
+
+/* 图片的logo大小 */
+.news_date img {
+    width: 25px; /* 图片宽度 */
+    height: 25px; /* 图片高度 */
+    object-fit: contain; /* 保持图片比例 */
+}
+
+/* 新闻标题 */
+.news_item h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* 新闻描述 */
+.news_description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6; /* 增加行高，提升可读性 */
+    letter-spacing: 0.01em; /* 略微增加字间距 */
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif; /* 使用更现代的英文字体 */
+    text-align: left; /* 左对齐 */
+    margin-bottom: 0px; /* 与下方内容的间距 */
+}
+
+/* Learn More 链接 */
+.learn_more {
+    color: #000000; /* 链接颜色 */
+    text-decoration: underline; /* 添加下划线 */
+    font-size: 14px;
+    font-weight: bold; /* 文字加粗 */
+    display: inline-block; /* 确保链接独占一行 */
+    margin-top: 10px; /* 与上方内容的间距 */
+}
+
+.learn_more:hover {
+    color: rgb(214, 143, 36);
+}
+
 /* --------------------------------3.底部大盒子-------------------------------- */
 .box_bottom {
     position: absolute; /* 绝对定位 */
-    top: 100%; /* 距离顶部的偏移量为90% */
+    top: var(--box_bottom_top); /* 距离顶部的偏移量为 */
     width: 100%; /* 宽度占满父容器的宽度 */
-    height: 5%; /* 高度占整个盒子的10% */
+    height: 100px; /* 高度占整个盒子的10% */
     background-color: rgb(54, 54, 54); /* 背景颜色 */
     margin: 0; /* 移除默认的外边距 */
     padding: 0; /* 可选：设置内边距 */
@@ -168,4 +272,53 @@
     font-family: STfangsong; /*设置字体*/
     line-height: 1.5; /*行高*/
     font-weight: bold;
+}
+
+/* 轮播图容器 */
+.carousel {
+    position: relative;
+    width: 480px; /* 图片框宽度 */
+    height: 300px; /* 图片框高度 */
+    overflow: hidden; /* 隐藏超出部分 */
+}
+
+/* 轮播图图片容器 */
+.carousel_images {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* 平滑过渡效果 */
+}
+
+.carousel_images img {
+    width: 480px; /* 图片宽度 */
+    height: 300px; /* 图片高度 */
+    object-fit: cover; /* 确保图片填充整个框，保持比例 */
+    flex-shrink: 0; /* 防止图片缩小 */
+}
+
+/* 轮播图按钮 */
+.carousel_prev,
+.carousel_next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    z-index: 10; /* 确保按钮在图片上方 */
+}
+
+.carousel_prev {
+    left: 10px; /* 左侧按钮位置 */
+}
+
+.carousel_next {
+    right: 10px; /* 右侧按钮位置 */
+}
+
+.carousel_prev:hover,
+.carousel_next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* 悬停时背景变深 */
 }
