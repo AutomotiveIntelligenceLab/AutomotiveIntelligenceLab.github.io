@@ -187,8 +187,8 @@
     transition: opacity 0.3s ease; /* 添加过渡效果 */
 }
 
-.teacher_image[data-hover-image="li_teacher_2"]::before {
-    background-image: url(../images/people_img/cat.jpg); /* 替换为第二张图片路径 */
+.teacher_image[data-hover-image="Li_teacher_1"]::before {
+    background-image: url(../images/people_img/liguofa/liguofa_1.png); /* 替换为第二张图片路径 */
 }
 
 .teacher_image[data-hover-image="Li_teacher_2"]::before {

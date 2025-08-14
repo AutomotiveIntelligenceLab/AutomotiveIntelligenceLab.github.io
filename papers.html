@@ -11,8 +11,12 @@
     <meta name="description" content="Automotive Intelligence Lab - Chongqing University">
     <meta name="author" content="Akaxi">
     <meta name="keywords" content="This is a website for Automotive Intelligence Lab">
-</head>
+    <!-- 引入 xlsx 库 -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> -->
 
+    <script src="./assets/js/xlsx.core.min.js"></script>
+    <script src="./assets/js/papers_script.js"></script>
+</head>
 <body>
     <div class="box_whole">
         <!-- 顶部导航 -->
@@ -44,189 +48,1269 @@
                     </div>
                     <!-- 论文列表 -->
                     <div class="papers_list">
-                        <div class="paper_item" data-year="2025">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/1.png" alt="Paper 1">
+                                    <img src="assets/images/papers_img/Cross-Driver_Domain_Generalization_for_Improved_Drowsiness_Recognition_Based_on_EEG_Signals.png" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>Large Models Efficient Compression Technology for Autonomous Driving: A Review</h2>
-                                    <p class="authors">CHU Wenbo , GAN Lu, LI Guofa, TANG Xiaolin, LI Keqiang</p>
-                                    <p class="year">机械工程学报, 2024, 60(22): 224-240.</p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="https://qikan.cmes.org/jxgcxb/CN/10.3901/JME.2024.22.224" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2021">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/2.png" alt="Paper 2">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>An infrared and visible image fusion method based on multi-scale transformation and norm optimization</h2>
-                                    <p class="authors">G. Li, Y. Lin, X. Qu</p>
-                                    <p class="year">Information Fusion, vol. 71, pp. 109–129, 2021</p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S1566253521000221" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2024">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/3.png" alt="Paper 3">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>A RGB-thermal Image Segmentation Method based on Parameter Sharing and Attention Fusion for Safe Autonomous Driving</h2>
-                                    <p class="authors">G. Li, Y. Lin, D. Ouyang, S. Li*, X. Luo, X. Qu, D. Pi, S. E. Li</p>
-                                    <p class="year">IEEE Transactions on Intelligent Transportation Systems, vol. 25, no. 6, 2024</p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="https://ieeexplore.ieee.org/abstract/document/10337777" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2022">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/4.png" alt="Paper 4">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>Exploring Behavioral Patterns of Lane Change Maneuvers for Human-Like Autonomous Driving</h2>
-                                    <p class="authors">Y. Chen, G. Li*, S. Li, W. Wang, S.E. Li, B. Cheng</p>
-                                    <p class="year">IEEE Transactions on Intelligent Transportation Systems, vol. 23, no. 9, pp.14322-14335, Sep. 2022</p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="#" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2022">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/5.png" alt="Paper 5">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>Decision making of autonomous vehicles in lane change scenarios: Deep reinforcement learning approaches with risk awareness</h2>
-                                    <p class="authors">G. Li, Y. Yang, S. Li, X. Qu*, N. Lyu, S.E. Li</p>
-                                    <p class="year">Transportation Research Part C: Emerging Technologies, vol. 134, 103452, Jan. 2022 </p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="#" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2021">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/6.png" alt="Paper 6">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>Risk assessment based collision avoidance decision-making for autonomous vehicles in multi-scenarios</h2>
-                                    <p class="authors">G. Li, Y. Yang, T. Zhang, X. Qu, D. Cao, B. Cheng, K. Li</p>
-                                    <p class="year">Transportation Research Part C: Emerging Technologies, vol. 122, 102820, Jan. 2021 </p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="#" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2021">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/7.png" alt="Paper 7">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>A deep learning based image enhancement approach for autonomous driving at night</h2>
-                                    <p class="authors">G. Li, Y. Yang, X. Qu, D. Cao, K. Li</p>
-                                    <p class="year">Knowledge-Based Systems, vol. 213, 106617, 2021</p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="#" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2020">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/8.png" alt="Paper 8">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>Deep learning approaches on pedestrian detection in hazy weather</h2>
-                                    <p class="authors">G. Li, Y. Yang, X. Qu</p>
-                                    <p class="year">IEEE Transactions on Industrial Electronics, vol. 67, no. 10, pp. 8889–8899, Oct. 2020</p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="#" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2025">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/9.png" alt="Paper 9">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>Recognizing and explaining driving stress using a Shapley additive explanation model by fusing EEG and behavior signals</h2>
-                                    <p class="authors">L. Yang, R. Zhou, G. Li*, Y. Yang, Q. Zhao</p>
-                                    <p class="year">Accident Analysis and Prevention, vol. 209, 107835, 2025</p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="#" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="paper_item" data-year="2018">
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
                             <div class="paper_content_wrapper">
                                 <div class="paper_img_box">
-                                    <img src="assets/images/papers_img/10.png" alt="Paper 10">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
                                 </div>
                                 <div class="paper_text">
-                                    <h2>Kalman filter-based tracking of moving objects using linear ultrasonic sensor array for road vehicles</h2>
-                                    <p class="authors">S. E. Li, G. Li*, J. Yu, C. Liu, B. Cheng, J. Wang, K. Li</p>
-                                    <p class="year">Mechanical Systems and Signal Processing, vol. 98, pp. 173–189, Jan. 2018</p>
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
                                     <div class="links">
-                                        <a href="#" class="link">Paper</a>
+                                        <a href="link_default" class="link">Paper</a>
                                         <a href="#" class="link">Code</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 论文项 -->
+                        <div class="paper_item" data-year="data_year_default">
+                            <div class="paper_content_wrapper">
+                                <div class="paper_img_box">
+                                    <img src="assets/images/papers_img/paper_logo.jpg" alt="Paper 1">
+                                </div>
+                                <div class="paper_text">
+                                    <h2>paper_name_default</h2>
+                                    <p class="authors">author_default</p>
+                                    <p class="journal">journal_default</p>
+                                    <div class="links">
+                                        <a href="link_default" class="link">Paper</a>
+                                        <a href="#" class="link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- 3.底部大盒子 -->
+
+        <!-- 底部信息 -->
         <div class="box_bottom">
             <div class="bottom_middle">
                 <p class="bottom_text_1">Teaching Building 7, Zone A, No. 174 Shazheng Street, Shapingba District, Chongqing, China, 400030| Phone: 12345678 | Email: 12345678@123.com<br>Copyright © 2025 Automotive Intelligence Lab</p>
             </div>
-
         </div>
     </div>
 
-    <script src="assets/js/papers_script.js"></script>
+    <script>
+        // 读取 Excel 文件
+        function readExcelFile(filePath, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.responseType = 'arraybuffer';
+
+            xhr.onload = function (e) {
+                const arrayBuffer = xhr.response;
+                if (arrayBuffer) {
+                    const data = new Uint8Array(arrayBuffer);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    callback(workbook);
+                }
+            };
+
+            xhr.send();
+        }
+
+        // 更新论文信息
+        function updatePaperInfo(workbook) {
+            const sheetName = workbook.SheetNames[0]; // 获取第一个工作表
+            const sheet = workbook.Sheets[sheetName];
+            const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+            // 获取所有论文项
+            const paperItems = document.querySelectorAll('.paper_item');
+
+            // 遍历论文项并更新信息
+            paperItems.forEach((item, index) => {
+                if (json[index + 1]) { // 跳过表头行
+                    const year = json[index + 1][0]; // 第一列：年份
+                    const title = json[index + 1][1]; // 第二列：论文名称
+                    const authors = json[index + 1][2]; // 第三列：作者
+                    const yearInfo = json[index + 1][3]; // 第四列：年份信息
+                    const paperLink = json[index + 1][4]; // 第五列：论文链接
+
+                    // 更新 data-year 属性
+                    item.setAttribute('data-year', year);
+
+                    // 更新论文名称
+                    const h2 = item.querySelector('.paper_text h2');
+                    if (h2) h2.textContent = title;
+
+                    // 更新作者
+                    const authorsElement = item.querySelector('.paper_text .authors');
+                    if (authorsElement) authorsElement.textContent = authors;
+
+                    // 更新年份信息
+                    const yearElement = item.querySelector('.paper_text .journal');
+                    if (yearElement) yearElement.textContent = yearInfo;
+
+                    // 更新论文链接
+                    const paperLinkElement = item.querySelector('.paper_text .links .link');
+                    if (paperLinkElement) paperLinkElement.href = paperLink;
+                }
+            });
+        }
+
+        // 调用函数读取 Excel 文件  并且更新论文信息
+        readExcelFile('assets/files/papers_index_show.xlsx', updatePaperInfo);
+    </script>
 </body>
 </html>

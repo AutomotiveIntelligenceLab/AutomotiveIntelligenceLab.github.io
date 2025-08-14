@@ -10,9 +10,9 @@
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
     --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
-    --box_whole_height_px: 2000px;    /*整个盒子的高度*/
+    --box_whole_height_px: 11700px;    /*整个盒子的高度*/
     --top_box_px: 50px;   /*顶部盒子的高度*/
-    --bottom_box_height_px: 1950px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 80px*/
+    --bottom_box_height_px: 11620px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 80px*/
  }
 
 * {
@@ -25,7 +25,8 @@
 .box_whole {
     background-color: rgba(0, 0, 0, 0); 
     width: 100%;
-    height: var(--box_whole_height_px); /* 固定高度为2000px */
+    height: var(--box_whole_height_px); 
+    /* height: auto;  */
     padding: 0px; /* 可选：设置内边距 */
     position: absolute; /* 设置定位属性为绝对定位 */
     top: 0px; /* 设置距离顶部的偏移量 */
@@ -204,16 +205,17 @@
 .paper_text .authors {
     font-size: 15px;
     color: #000000;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     line-height: 1.3;
     font-family: "Open Sans", "微软雅黑", Arial, sans-serif;
 }
 
-.paper_text .year {
-    font-size: 13px;
+.paper_text .journal {
+    font-size: 15px;
     color: #000000;
-    margin-bottom: 5px;
-    line-height: 1.2;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    font-family: "Open Sans", "微软雅黑", Arial, sans-serif;
 }
 
 .paper_text .links {
@@ -235,4 +237,42 @@
     background: #e6f0ff;
     color: #0056b3;
     text-decoration: underline;
+}
+
+/* --------------------------------3.底部大盒子-------------------------------- */
+.box_bottom {
+    position: absolute; /* 绝对定位 */
+    top: var(--bottom_box_height_px); /* 距离顶部的偏移量为90% */
+    width: 100%; /* 宽度占满父容器的宽度 */
+    height: 80px; /* 高度占整个盒子的10% */
+    background-color: rgb(54, 54, 54); /* 背景颜色 */
+    margin: 0; /* 移除默认的外边距 */
+    padding: 0; /* 可选：设置内边距 */
+}
+
+/* -----------------3.1居中的盒子----------------- */
+.bottom_middle {
+    position: absolute; /* 绝对定位 */
+    top: 0px; /* 距离顶部0px */
+    left: 50%; /* 距离左侧50% */
+    transform: translate(-50%); /* 通过transform居中 */
+    width: 1100px; /* 示例宽度 */
+    height: 100%; /* 示例高度 */
+    background-color: rgba(0, 0, 0, 0); /* 示例背景颜色 */
+    margin: 0; /* 移除默认的外边距 */
+    padding: 0; /* 可选：设置内边距 */
+    display: flex; /* 设置为flex容器 */
+    justify-content: space-around; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+
+.bottom_text_1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 0px; /*距离div高10px*/
+    font-size: 18px; /*设置字体大小*/
+    font-family: STfangsong; /*设置字体*/
+    line-height: 1.5; /*行高*/
+    font-weight: bold;
 }
