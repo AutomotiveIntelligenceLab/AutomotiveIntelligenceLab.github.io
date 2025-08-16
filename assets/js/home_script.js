@@ -8,11 +8,11 @@ const img_list = home_show_imgs.querySelectorAll('img')
 const nav_boxes = document.querySelectorAll('.nav_box')
 //导览盒子摘要文本
 const img_abstracts = [
-    "Abstract for image 1: This image showcases our research in autonomous driving systems,This image showcases our research in autonomous driving systems,This image showcases our research in autonomous driving systems.",
-    "Abstract for image 2: Explore our advancements in intelligent transportation technologies,Explore our advancements in intelligent transportation technologies,Explore our advancements in intelligent transportation technologies.",
-    "Abstract for image 3: Learn about our work in vehicle-to-everything (V2X) communication,Learn about our work in vehicle-to-everything (V2X) communication,Learn about our work in vehicle-to-everything (V2X) communication.",
-    "Abstract for image 4: Discover how we are improving safety in automotive systems,Discover how we are improving safety in automotive systems,Discover how we are improving safety in automotive systems.",
-    "Abstract for image 5: Our latest innovations in connected and autonomous vehicles,Our latest innovations in connected and autonomous vehicles,Our latest innovations in connected and autonomous vehicles."
+    "We propose a novel two-stage domain generalization framework for EEG-based driver drowsiness recognition, addressing cross-subject EEG variations through domain mappers and adversarial training.",
+    "We propose an alternating interaction fusion approach to overcome the limitations of existing methods, which either underutilize image data or suffer from excessive complexity in parallel fusion schemes.",
+    "We propose lightweight optimization strategies for vision-based decision-making models, addressing parameter size, memory usage, and inference speed through innovative architectural improvements.",
+    "We developed an explainable driving stress recognition framework that combines EEG and behavioral data, achieving 84.93% accuracy after feature selection - an 8.56% and 26.51% improvement over using either data type alone.",
+    "We investigated tunnel-induced mental fatigue in high-speed rail drivers using EEG and graph theory, finding significantly increased fatigue (p<0.001) and altered brain connectivity patterns during tunnel driving compared to plain scenarios."
 ];
 //获取摘要文字元素
 const img_abstract_text = document.getElementById('img_abstract_text')

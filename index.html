@@ -12,6 +12,9 @@
     <meta name="description" content="Automotive Intelligence Lab - Chongqing University"><!-- 网页描述需修改 -->
     <meta name="author" content="Akaxi"><!-- 网页作者需修改 -->
     <meta name="keywords" content="This is a website for Automotive Intelligence Lab"><!-- 网页关键词需修改 -->
+
+    <!-- 引入xlsx库对主页的展示图做动态调整 -->
+    <script src="./assets/js/xlsx.core.min.js"></script>
 </head>
 
 <body>
@@ -78,7 +81,7 @@
                 <!--2.1.3导览框下面的对展示图片的摘要-->
                 <div class="img_nav_abstract">
                     <!--摘要文本，会随着轮播变化-->
-                    <p id="img_abstract_text">Abstract for image 1: This image showcases our research in autonomous driving systems,This image showcases our research in autonomous driving systems,This image showcases our research in autonomous driving systems.</p>
+                    <p id="img_abstract_text">We propose a novel two-stage domain generalization framework for EEG-based driver drowsiness recognition, addressing cross-subject EEG variations through domain mappers and adversarial training.</p>
                 </div>
                 <!--2.1.4 关于更多链接展示：bilibili、yutube、github等-->
                 <div class="learn_more_box">
@@ -260,6 +263,58 @@
         <button class="chatbot-toggle-btn">💬</button>
     
         <script src="./assets/js/chatbot.js"></script>
+
+        <!-- 首页轮播图动态数据库变化 -->
+        <script>
+            // 读取 Excel 文件
+            function readExcelFile(filePath, callback) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', filePath, true);
+                xhr.responseType = 'arraybuffer';
+        
+                xhr.onload = function (e) {
+                    const arrayBuffer = xhr.response;
+                    if (arrayBuffer) {
+                        const data = new Uint8Array(arrayBuffer);
+                        const workbook = XLSX.read(data, { type: 'array' });
+                        callback(workbook);
+                    }
+                };
+        
+                xhr.send();
+            }
+        
+            // 更新图片
+            function updateImages(workbook) {
+                const sheetName = workbook.SheetNames[0]; // 获取第一个工作表
+                const sheet = workbook.Sheets[sheetName];
+                const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+        
+                // 获取所有图片元素
+                const carouselImages = document.querySelectorAll('.image_container img'); // 轮播大图
+                const navImages = document.querySelectorAll('.img_nav_box .nav_box img'); // 导航小图
+        
+                // 遍历前五项并更新图片
+                for (let i = 0; i < 5; i++) {
+                    if (json[i + 1]) { // 跳过表头行
+                        const imagePath = json[i + 1][5]; // 第六列：图片路径
+        
+                        // 更新轮播大图
+                        if (carouselImages[i]) {
+                            carouselImages[i].src = imagePath;
+                        }
+        
+                        // 更新导航小图
+                        if (navImages[i]) {
+                            navImages[i].src = imagePath;
+                        }
+                    }
+                }
+            }
+        
+            // 调用函数读取 Excel 文件并更新图片
+            readExcelFile('assets/files/papers_index_show.xlsx', updateImages);
+        </script>
 
     </div>
 
