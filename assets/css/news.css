@@ -132,8 +132,9 @@
     margin: 0; /* 移除默认的外边距 */
     padding: 0; /* 可选：设置内边距 */
     display: flex; /* 设置为flex容器 */
-    justify-content: space-around; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    justify-content: flex-start; /* 内容从顶部开始排列 */
+    align-items: flex-start; /* 左对齐 */
+    overflow-y: auto; /* 允许内容滚动 */
 }
 
 /* 新闻容器 */
@@ -141,7 +142,12 @@
     max-width: 1100px;
     padding-left: 20px;
     background-color: #00000000;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 垂直排列 */
+    justify-content: flex-start; /* 内容从顶部开始排列 */
+    align-items: flex-start; /* 左对齐 */
+    margin-top: 0; /* 移除顶部外边距 */
+    padding-top: 0; /* 移除顶部内边距 */
 }
 
 /* 年份标题 */
