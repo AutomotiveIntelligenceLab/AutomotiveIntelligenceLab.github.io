@@ -10,9 +10,9 @@
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
     --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
-    --box_whole_height_px: 11700px;    /*整个盒子的高度*/
+    --box_whole_height_px: 7290px;    /*整个盒子的高度*/
     --top_box_px: 50px;   /*顶部盒子的高度*/
-    --bottom_box_height_px: 11620px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 80px*/
+    --bottom_box_height_px: 7290px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 80px*/
  }
 
 * {

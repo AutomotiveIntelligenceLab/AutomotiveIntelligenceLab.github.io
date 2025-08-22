@@ -143,6 +143,7 @@
     overflow: hidden;  /*隐藏裁剪*/
 }
 
+/* 图片容器 */
 .image_container{
     display: flex;
     width: 4270px; /* 854px * 5张图片 */
@@ -153,6 +154,22 @@
 .image_container img {
     width: 854px; /* 每张图片的宽度 */
     height: 480px; /* 每张图片的高度 */
+}
+
+/* 视频容器 */
+.video_container {
+    display: flex;
+    width: 854px; /* 单个视频的宽度 */
+    height: 480px; /* 单个视频的高度 */
+    transform: translateX(0); /* 初始状态不应用视频X轴水平轮播 */
+    transition: transform 0.5s ease-in-out; /* 视频轮播过渡效果0.5秒 */
+}
+
+/* 视频样式 */
+.video_container iframe {
+    width: 100%; /* 视频宽度占满父容器 */
+    height: 100%; /* 视频高度占满父容器 */
+    border: none; /* 移除 iframe 的边框 */
 }
 
 .left_button{
@@ -197,21 +214,22 @@
     align-items: center;
 }
 
-.nav_box{
+.nav_box {
     width: 160px;
     height: 100px;
-    background-color: rgba(0, 0, 0, 0); /* 背景颜色，半透明 */
+    background-color: rgba(0, 0, 0, 0); /* 默认透明 */
     border: 2px solid black;
     border-radius: 5px; /* 圆角 */
     cursor: pointer; /* 鼠标悬停时显示手型 */
     overflow: hidden;
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
 }
 
 .nav_box img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.4; /* 默认展示框是透明的*/
+    opacity: 0.6; /* 默认展示框是透明的  默认透明度*/
     transition: opacity 0.3s ease; /* 添加过渡效果 */
 }
 
