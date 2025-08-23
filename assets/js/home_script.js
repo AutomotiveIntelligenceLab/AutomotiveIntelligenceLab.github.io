@@ -6,8 +6,8 @@ const right_button = document.getElementById('right_button')
 // 视频列表
 const video_list = [
     "https://www.youtube.com/embed/hBMPtV-aj1c?autoplay=1&mute=1&rel=0", // 第一个视频
-    "https://www.youtube.com/embed/hBMPtV-aj1c?autoplay=1&mute=1&rel=0",  // 第二个视频
-    "https://www.youtube.com/embed/hBMPtV-aj1c?autoplay=1&mute=1&rel=0",  // 第三个视频
+    "https://www.youtube.com/embed/KKNAI8E_yGQ?autoplay=1&mute=1&rel=0",  // 第二个视频
+    "https://www.youtube.com/embed/G9AWF929-4I?autoplay=1&mute=1&rel=0",  // 第三个视频
     "https://www.youtube.com/embed/hBMPtV-aj1c?autoplay=1&mute=1&rel=0",  // 第四个视频
     "https://www.youtube.com/embed/hBMPtV-aj1c?autoplay=1&mute=1&rel=0"   // 第五个视频
 ]
