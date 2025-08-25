@@ -235,7 +235,7 @@
     top: 330px;
     width: 854px;
     height: 480px;
-    background-color: rgba(120, 158, 77, 0.856);
+    background-color: rgba(0, 0, 0, 0);
     overflow: hidden; /* 防止图片溢出 */
 }
 

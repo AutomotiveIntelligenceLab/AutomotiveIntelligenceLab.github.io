@@ -174,6 +174,24 @@
     display: block; /* 防止图片下方出现空白 */
 }
 
+/* 视频展示框 */
+/* 视频容器 */
+.video_container {
+    display: flex;
+    width: 600px; /* 单个视频的宽度 */
+    height: 300px; /* 单个视频的高度 */
+    transform: translateX(0); /* 初始状态不应用视频X轴水平轮播 */
+    transition: transform 0.5s ease-in-out; /* 视频轮播过渡效果0.5秒 */
+}
+
+/* 视频样式 */
+.video_container iframe {
+    width: 100%; /* 视频宽度占满父容器 */
+    height: 100%; /* 视频高度占满父容器 */
+    border: none; /* 移除 iframe 的边框 */
+}
+
+
 /* 文字内容部分 */
 .text_content {
     flex: 1; /* 文字部分占据剩余空间 */

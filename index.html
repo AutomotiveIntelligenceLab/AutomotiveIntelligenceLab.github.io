@@ -304,13 +304,13 @@
                 const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
         
                 // 获取所有图片元素
-                const carouselImages = document.querySelectorAll('.image_container img'); // 轮播大图
+                // const carouselImages = document.querySelectorAll('.image_container img'); // 轮播大图
                 const navImages = document.querySelectorAll('.img_nav_box .nav_box img'); // 导航小图
         
                 // 遍历前五项并更新图片
                 for (let i = 0; i < 5; i++) {
                     if (json[i + 1]) { // 跳过表头行
-                        const imagePath = json[i + 1][5]; // 第六列：图片路径
+                        const imagePath = json[i + 1][3]; // 第三列：图片路径
         
                         // 更新轮播大图
                         if (carouselImages[i]) {
@@ -326,7 +326,7 @@
             }
         
             // 调用函数读取 Excel 文件并更新图片
-            readExcelFile('assets/files/papers_index_show.xlsx', updateImages);
+            readExcelFile('assets/files/home_show.xlsx', updateImages);
         </script>
 
     </div>
