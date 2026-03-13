@@ -89,10 +89,22 @@
     position: absolute;
     top: 0px;
     left: 10px;
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
 }
 
+.top_title_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.top_title_image img {
+    max-height: 110%;
+    width: auto;
+}
 .text_1{
     color: rgb(0, 0, 0);
     text-align: center;
@@ -272,7 +284,7 @@
 .learn_more_box{
     position: absolute;
     top: 700px;
-    width: 150px;
+    width: 200px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0);
     display: flex;
@@ -331,6 +343,49 @@
 
 .bilibili_box img:hover {
     transform: scale(1.1); /* 鼠标悬停时图标放大 */
+}
+
+.weixin_box{
+    width: var(--box_logo); /* 设置图标宽度 */
+    height: var(--box_logo); /* 设置图标高度 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    position: relative; /* 为悬停弹框提供定位基准 */
+}
+
+.weixin_box > a > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图标填充整个盒子 */
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.weixin_box > a > img:hover{
+    transform: scale(1.1); /* 鼠标悬停时图标放大 */
+}
+
+.weixin_hover{
+    display: none;
+    position: absolute;
+    top: calc(var(--box_logo) + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 360px;
+    padding: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+}
+
+.weixin_hover img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.weixin_box:hover .weixin_hover{
+    display: block;
 }
 
 /* -----------------分割线2.1结束的分割线----------------- */
