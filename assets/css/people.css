@@ -932,3 +932,26 @@
     line-height: 1.5; /*行高*/
     font-weight: bold;
 }
+
+/* -----------------语言切换按钮----------------- */
+.language_switch {
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    z-index: 1100;
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.78);
+    color: #333;
+    cursor: pointer;
+    font-family: var(--text_navagation);
+    font-size: 16px;
+    line-height: 1.2;
+    backdrop-filter: blur(8px);
+}
+
+.language_switch:hover {
+    border-color: rgb(255, 123, 0);
+    color: rgb(255, 123, 0);
+}
