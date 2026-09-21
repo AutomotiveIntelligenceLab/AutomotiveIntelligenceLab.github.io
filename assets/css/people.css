@@ -8,18 +8,18 @@
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
     --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
-    --box_whole_height_px: 19100px;    /*整个盒子的高度*/
+    --box_whole_height_px: 19660px;    /*整个盒子的高度*/
     --top_box_px: 50px;   /*顶部盒子的高度*/
-    --info_box_height: 2680px;   /* 信息统计盒子高度 */
-    --about_us_top: 2700px;   /* About Us 文字距离顶部的高度    about_us_top = info_box_height + 20px */
-    --info_people_box_top: 2730px;   /* Ph.D. Master's Staff 等统计信息距离顶部的高度 */
-    --phd_title_top: 2900px;  /* 博士Ph.D. Student标题距离顶部的高度 */
-    --phd_box_top: 2950px;    /* 博士盒子距离顶部的高度 */
+    --info_box_height: 3240px;   /* 信息统计盒子高度 */
+    --about_us_top: 3260px;   /* About Us 文字距离顶部的高度    about_us_top = info_box_height + 20px */
+    --info_people_box_top: 3290px;   /* Ph.D. Master's Staff 等统计信息距离顶部的高度 */
+    --phd_title_top: 3460px;  /* 博士Ph.D. Student标题距离顶部的高度 */
+    --phd_box_top: 3510px;    /* 博士盒子距离顶部的高度 */
     --phd_box_height: 3200px;  /* 博士盒子总高 */
-    --master_title_top: 6150px;     /* 硕士Master's Student标题距离顶部的高度 */
-    --master_box_top: 6220px; /*硕士盒子距离顶部的高度*/
+    --master_title_top: 6710px;     /* 硕士Master's Student标题距离顶部的高度 */
+    --master_box_top: 6780px; /*硕士盒子距离顶部的高度*/
     --master_box_height: 12780px; /* 硕士盒子总高 */
-    --bottom_box_height_px: 19050px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 50px*/
+    --bottom_box_height_px: 19610px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 50px*/
 
  }
 
@@ -560,6 +560,100 @@
     color: #333; /* 设置文字颜色 */
     margin-top: 3px; /* 与头像的间距 */
     text-align: center; /* 文字居中 */
+}
+
+/* -----------------Graduated标题与毕业生盒子----------------- */
+.graduated_title {
+    position: absolute;
+    top: 2360px;
+    width: 1100px;
+    height: 40px;
+    font-family: var(--text_navagation);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.graduated_box {
+    position: absolute;
+    top: 2420px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1100px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 325px;
+    column-gap: 20px;
+    row-gap: 35px;
+    align-content: start;
+}
+
+.graduated_card {
+    width: 250px;
+    min-height: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 0 0 12px;
+    box-sizing: border-box;
+}
+
+.graduated_image {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.graduated_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.graduated_card h3 {
+    margin: 10px 0 8px;
+    font-family: var(--text_people_intro);
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.graduated_card h3 span {
+    display: block;
+    margin-top: 2px;
+    font-family: var(--text_navagation);
+    font-size: 14px;
+    font-weight: normal;
+    color: #777;
+}
+
+.graduated_details {
+    width: 220px;
+    font-family: var(--text_people_intro);
+    font-size: 13px;
+    line-height: 1.45;
+    color: #555;
+}
+
+.graduated_details p {
+    margin: 3px 0;
+}
+
+.graduated_details strong {
+    color: #333;
+    font-weight: 600;
 }
 
 /* --------------------------------详细介绍-------------------------------- */

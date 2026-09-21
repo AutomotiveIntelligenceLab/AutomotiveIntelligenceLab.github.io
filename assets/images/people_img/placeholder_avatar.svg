@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Avatar placeholder</title>
+  <desc id="desc">A neutral placeholder avatar for a graduated member profile.</desc>
+  <rect width="180" height="180" fill="#eeeeee"/>
+  <circle cx="90" cy="66" r="31" fill="#b8b8b8"/>
+  <path d="M35 155c4-34 24-51 55-51s51 17 55 51z" fill="#b8b8b8"/>
+</svg>
