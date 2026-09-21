@@ -949,6 +949,8 @@
     font-size: 16px;
     line-height: 1.2;
     backdrop-filter: blur(8px);
+    display: inline-block;
+    text-decoration: none;
 }
 
 .language_switch:hover {
