@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Gaussian Splatting Viewer</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #000; }
+        canvas { display: block; }
+        
+        /* --- 顶部控制栏 --- */
+        .controls-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 100; 
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        select {
+            padding: 6px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .home-button {
+            padding: 6px 12px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .home-button:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        input[type="file"] {
+            color: #ccc;
+            font-size: 12px;
+            max-width: 200px;
+        }
+
+        #info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #ddd;
+            background: rgba(0,0,0,0.6);
+            padding: 12px;
+            font-family: sans-serif;
+            font-size: 14px;
+            pointer-events: none;
+            border-radius: 8px;
+            user-select: none;
+            backdrop-filter: blur(4px);
+            z-index: 50;
+        }
+
+        /* --- ⏳ 加载遮罩层 --- */
+        #loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            color: white;
+            font-family: sans-serif;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <div id="loaderText">正在加载模型中...</div>
+</div>
+
+<div class="controls-container">
+    <a href="index.html" class="home-button">返回主页</a>
+    <select id="sceneSelect"></select>
+    <input type="file" id="fileInput" accept=".ply,.spz,.splat,.ksplat" />
+</div>
+
+<div id="info">
+    <strong>🎮 操作指南:</strong><br>
+    🖱️ 左键: 旋转 | 右键: 平移 | 滚轮: 缩放<br>
+    ⌨️ W/A/S/D: 漫游移动<br>
+    <span style="color: #ffaa00;">提示: 切换下拉框可直接加载不同场景</span>
+</div>
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.178.0/three.module.js",
+      "@sparkjsdev/spark": "https://sparkjs.dev/releases/spark/0.1.10/spark.module.js",
+      "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.19.1/dist/lil-gui.esm.min.js"
+    }
+  }
+</script>
+
+<script type="module">
+  import * as THREE from "three";
+  import { SplatMesh, SparkControls } from "@sparkjsdev/spark";
+  import GUI from "lil-gui"; 
+
+  // ==========================================
+  // 1. 场景配置表
+  // ==========================================
+  const SCENES = [
+      {
+          name: "默认展示模型",
+          url: "https://huggingface.co/datasets/Akaxi/point_cloud/resolve/main/point_cloud.ply",
+          rotation: { x: 175.32, y: 79.56, z: 0.72 }
+      },
+      {
+          name: "Waymo 场景 1067",
+          url: "https://huggingface.co/datasets/Akaxi/Web_3dgs/resolve/main/AAA_waymo_4/1067/point_cloud.ply",
+          rotation: { x: 0, y: 0, z: 0 }
+      },
+      {
+          name: "Waymo 场景 1172",
+          url: "https://huggingface.co/datasets/Akaxi/Web_3dgs/resolve/main/AAA_waymo_4/1172/point_cloud.ply",
+          rotation: { x: 0, y: 0, z: 0 }
+      },
+      {
+          name: "Waymo 场景 1176",
+          url: "https://huggingface.co/datasets/Akaxi/Web_3dgs/resolve/main/AAA_waymo_4/1176/point_cloud.ply",
+          rotation: { x: 0, y: 0, z: 0 }
+      },
+      {
+          name: "Waymo 国内场景 (Guonei)",
+          url: "https://huggingface.co/datasets/Akaxi/Web_3dgs/resolve/main/AAA_waymo_4/guonei/point_cloud.ply",
+          rotation: { x: 0, y: 0, z: 0 }
+      }
+  ];
+
+  // --- 场景初始化 ---
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x000000); 
+  
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  document.body.appendChild(renderer.domElement);
+
+  camera.position.set(0, 0, 3);
+  const controls = new SparkControls({ canvas: renderer.domElement });
+
+  // --- GUI 初始化 ---
+  const gui = new GUI({ title: "模型控制" });
+  let currentSplat = null; 
+  let modelFolder = null; 
+  
+  // 获取 loader 元素
+  const loaderEl = document.getElementById("loader");
+  const loaderText = document.getElementById("loaderText");
+
+  // ==========================================
+  // 核心功能: 通用加载函数 (修复 Loading 逻辑)
+  // ==========================================
+  function loadSplat(url, name, initialRotation = null) {
+      // 1. 显示加载遮罩
+      loaderEl.style.display = "flex";
+      loaderText.innerText = `正在加载: ${name}...`;
+
+      // 2. 清理旧模型
+      if (currentSplat) {
+          scene.remove(currentSplat);
+          currentSplat.dispose();
+      }
+
+      // 3. 创建新模型，绑定 onLoad 回调
+      const splat = new SplatMesh({ 
+          url: url,
+          // 🔥 关键修复：使用官方 onLoad 回调来关闭遮罩
+          onLoad: () => {
+              console.log(`✅ [Loaded]: ${name}`);
+              loaderEl.style.display = "none"; // 隐藏遮罩
+          }
+      });
+      
+      splat.rotation.order = 'YXZ'; 
+
+      if (initialRotation) {
+          splat.rotation.x = THREE.MathUtils.degToRad(initialRotation.x);
+          splat.rotation.y = THREE.MathUtils.degToRad(initialRotation.y);
+          splat.rotation.z = THREE.MathUtils.degToRad(initialRotation.z);
+      }
+
+      scene.add(splat);
+      currentSplat = splat; 
+      
+      console.log(`[Start Loading]: ${name}`);
+      updateGUI(splat, name);
+  }
+
+  // ==========================================
+  // 下拉菜单与文件处理
+  // ==========================================
+  const sceneSelect = document.getElementById("sceneSelect");
+  
+  SCENES.forEach((item, index) => {
+      const option = document.createElement("option");
+      option.value = index;
+      option.textContent = item.name;
+      sceneSelect.appendChild(option);
+  });
+
+  sceneSelect.addEventListener("change", (e) => {
+      const index = e.target.value;
+      const selectedScene = SCENES[index];
+      loadSplat(selectedScene.url, selectedScene.name, selectedScene.rotation);
+      fileInput.value = ""; 
+  });
+
+  // 默认加载第一个
+  loadSplat(SCENES[0].url, SCENES[0].name, SCENES[0].rotation);
+
+  const fileInput = document.getElementById("fileInput");
+  fileInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const fileURL = URL.createObjectURL(file);
+      // 本地文件也绑定 onLoad 逻辑
+      loadSplat(fileURL, file.name, null);
+    }
+  });
+
+  // --- GUI 更新 ---
+  function updateGUI(mesh, name) {
+      if (modelFolder) modelFolder.destroy();
+      modelFolder = gui.addFolder(`${name}`);
+      
+      const params = {
+          posX: mesh.position.x, posY: mesh.position.y, posZ: mesh.position.z,
+          rotX: THREE.MathUtils.radToDeg(mesh.rotation.x),
+          rotY: THREE.MathUtils.radToDeg(mesh.rotation.y),
+          rotZ: THREE.MathUtils.radToDeg(mesh.rotation.z),
+          scale: 1
+      };
+
+      const posFolder = modelFolder.addFolder('位移');
+      posFolder.add(params, 'posX').name('X').onChange(v => mesh.position.x = v);
+      posFolder.add(params, 'posY').name('Y').onChange(v => mesh.position.y = v);
+      posFolder.add(params, 'posZ').name('Z').onChange(v => mesh.position.z = v);
+
+      const rotFolder = modelFolder.addFolder('旋转');
+      rotFolder.add(params, 'rotX', -180, 180).name('X').onChange(v => mesh.rotation.x = THREE.MathUtils.degToRad(v));
+      rotFolder.add(params, 'rotY', -180, 180).name('Y').onChange(v => mesh.rotation.y = THREE.MathUtils.degToRad(v));
+      rotFolder.add(params, 'rotZ', -180, 180).name('Z').onChange(v => mesh.rotation.z = THREE.MathUtils.degToRad(v));
+
+      modelFolder.add(params, 'scale', 0.1, 5).name('缩放').onChange(v => mesh.scale.set(v, v, v));
+      modelFolder.open();
+  }
+
+  // --- Resize ---
+  window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // ==========================================
+  // 🚀 渲染循环
+  // ==========================================
+  renderer.setAnimationLoop((time) => {
+    controls.update(camera);
+    renderer.render(scene, camera);
+  });
+</script>
+
+</body>
+</html>
