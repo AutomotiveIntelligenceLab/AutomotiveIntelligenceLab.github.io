@@ -8,18 +8,18 @@
     --text_navagation: Calibri;
     --text_top_lab_name: Andale Mono;
     --text_people_intro: "Open Sans", sans-serif; /* 定义Open Sans字体变量 */
-    --box_whole_height_px: 19920px;    /*整个盒子的高度*/
+    --box_whole_height_px: 27380px;    /*整个盒子的高度*/
     --top_box_px: 50px;   /*顶部盒子的高度*/
-    --info_box_height: 3500px;   /* 信息统计盒子高度 */
-    --about_us_top: 3520px;   /* About Us 文字距离顶部的高度    about_us_top = info_box_height + 20px */
-    --info_people_box_top: 3550px;   /* Ph.D. Master's Staff 等统计信息距离顶部的高度 */
-    --phd_title_top: 3720px;  /* 博士Ph.D. Student标题距离顶部的高度 */
-    --phd_box_top: 3770px;    /* 博士盒子距离顶部的高度 */
-    --phd_box_height: 3200px;  /* 博士盒子总高 */
-    --master_title_top: 6970px;     /* 硕士Master's Student标题距离顶部的高度 */
-    --master_box_top: 7040px; /*硕士盒子距离顶部的高度*/
-    --master_box_height: 12780px; /* 硕士盒子总高 */
-    --bottom_box_height_px: 19870px;    /*底部盒子的距离顶部的高度  bottom_box_height_px = box_whole_height_px - 50px*/
+    --info_box_height: 4160px;   /* 信息统计盒子高度 */
+    --about_us_top: 4180px;   /* About Us 文字距离顶部的高度    about_us_top = info_box_height + 20px */
+    --info_people_box_top: 4210px;   /* Ph.D. Master's Staff 等统计信息距离顶部的高度 */
+    --phd_title_top: 4380px;  /* 博士Ph.D. Student标题距离顶部的高度 */
+    --phd_box_top: 4450px;    /* 博士盒子距离顶部的高度 */
+    --phd_box_height: 4550px;  /* 博士盒子总高 */
+    --master_title_top: 9000px;     /* 硕士Master's Student标题距离顶部的高度 */
+    --master_box_top: 9070px; /*硕士盒子距离顶部的高度*/
+    --master_box_height: 18180px; /* 硕士盒子总高 */
+    --bottom_box_height_px: 27300px;    /*底部盒子的距离顶部的高度，预留80px页脚*/
 
  }
 
@@ -329,7 +329,7 @@
     position: absolute; /* 绝对定位 */
     top: 900px; /* 距离顶部0px */
     width: 1100px; /* 示例宽度 */
-    height: 1760px; /* 40张成员卡片按5列排列为8行 */
+    height: 2420px; /* 51位成员及4个占位卡片，按5列排列为11行 */
     background-color: rgba(0, 0, 0, 0); /* 示例背景颜色 */
     margin: 0; /* 移除默认的外边距 */
     padding: 0; /* 可选：设置内边距 */
@@ -566,7 +566,7 @@
 /* -----------------Graduated标题与毕业生盒子----------------- */
 .graduated_title {
     position: absolute;
-    top: 2660px;
+    top: 3320px;
     left: 50%;
     transform: translateX(-50%);
     width: 1100px;
@@ -583,7 +583,7 @@
 
 .graduated_box {
     position: absolute;
-    top: 2712px;
+    top: 3372px;
     left: 50%;
     transform: translateX(-50%);
     width: 1100px;
@@ -956,4 +956,98 @@
 .language_switch:hover {
     border-color: rgb(255, 123, 0);
     color: rgb(255, 123, 0);
+}
+
+/* 2026级新增成员：头像、悬停照片与完整介绍照片。 */
+.student_image[data-hover-image="zouziheng_2"]::before {
+    background-image: url(../images/people_img/zouziheng/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="masenlei_2"]::before {
+    background-image: url(../images/people_img/masenlei/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="tangyining_2"]::before {
+    background-image: url(../images/people_img/tangyining/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="xiepeijia_2"]::before {
+    background-image: url(../images/people_img/xiepeijia/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="chenyuzhou_2"]::before {
+    background-image: url(../images/people_img/chenyuzhou/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="jianqiuwei_2"]::before {
+    background-image: url(../images/people_img/jianqiuwei/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="huangshiji_2"]::before {
+    background-image: url(../images/people_img/huangshiji/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="liyitian_2"]::before {
+    background-image: url(../images/people_img/liyitian/portrait.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="dengyuanwei_2"]::before {
+    background-image: url(../images/people_img/dengyuanwei/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="zhouqijie_2"]::before {
+    background-image: url(../images/people_img/zhouqijie/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="xuze_2"]::before {
+    background-image: url(../images/people_img/xuze/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="xiongguanzhi_2"]::before {
+    background-image: url(../images/people_img/xiongguanzhi/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="liguanzhong_2"]::before {
+    background-image: url(../images/people_img/liguanzhong/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="fengxipeng_2"]::before {
+    background-image: url(../images/people_img/fengxipeng/life.jpg);
+    background-position: center;
+}
+.student_image[data-hover-image="quanyangping_2"]::before {
+    background-image: url(../images/people_img/quanyangping/life.jpg);
+    background-position: center;
+}
+
+.new_member_image img {
+    object-position: center 20%;
+}
+
+/* Match the existing 540 × 400 biography photo frames; retain original files. */
+.new_member_intro .student_intro_image img {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Crop portrait-oriented photos around the subject's face and upper body. */
+#tangyining .student_intro_image img { object-position: center 25%; }
+#xiepeijia .student_intro_image img { object-position: center 65%; }
+#quanyangping .student_intro_image img { object-position: center 60%; }
+#zouziheng .student_intro_image img { object-position: center top; }
+#masenlei .student_intro_image img,
+#liyitian .student_intro_image img {
+    /* White ID portraits retain the whole face within the same landscape frame. */
+    object-fit: contain;
+    object-position: center;
+    background: #fff url(../images/people_img/kongbai.png) center / cover;
+}
+.student_image[data-hover-image="xiongguanzhi_2"]::before { background-position: 70% center; }
+.student_image[data-hover-image="zouziheng_2"]::before { background-position: center top; }
+
+.graduated_image img[src*="wangkeyong/"] {
+    object-position: center 20%;
+}
+#huangshiji .student_intro_image img {
+    object-position: center 25%;
 }
